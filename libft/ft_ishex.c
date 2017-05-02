@@ -1,23 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_wordlength.c                                    :+:      :+:    :+:   */
+/*   ft_ishex.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tpan <marvin@42.fr>                        +#+  +:+       +#+        */
+/*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/13 14:02:45 by tpan              #+#    #+#             */
-/*   Updated: 2017/03/20 20:02:06 by tpan             ###   ########.fr       */
+/*   Created: 2017/03/11 12:15:30 by tpan              #+#    #+#             */
+/*   Updated: 2017/03/11 12:18:38 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_wordlength(char *str, char delimiter)
+int		ft_ishex(size_t c)
 {
-	int		i;
-
-	i = 0;
-	while (str[i] != '\0' && str[i] != delimiter)
-		i++;
-	return (i);
+	if ((c >= 48 && c <= 57) || (c >= 65 && c <= 70) || (c >= 97 && c <= 102))
+		return (1);
+	else
+		return (0);
 }

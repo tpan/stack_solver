@@ -6,7 +6,7 @@
 /*   By: tpan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/16 14:07:22 by tpan              #+#    #+#             */
-/*   Updated: 2016/11/16 07:57:28 by tpan             ###   ########.fr       */
+/*   Updated: 2017/03/19 18:35:46 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 size_t	ft_strlen(char const *str)
 {
-	char *start;
+	size_t i;
 
-	start = (char *)str;
-	while (*str != 0)
+	i = 0;
+	while (str[i] != '\0')
 	{
-		str++;
+		i++;
 	}
-	return (str - start);
+	return (i);
 }

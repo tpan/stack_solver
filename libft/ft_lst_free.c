@@ -1,23 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_wordlength.c                                    :+:      :+:    :+:   */
+/*   ft_lst_free.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tpan <marvin@42.fr>                        +#+  +:+       +#+        */
+/*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/13 14:02:45 by tpan              #+#    #+#             */
-/*   Updated: 2017/03/20 20:02:06 by tpan             ###   ########.fr       */
+/*   Created: 2017/04/09 16:25:05 by tpan              #+#    #+#             */
+/*   Updated: 2017/04/09 16:26:16 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_wordlength(char *str, char delimiter)
+void	ft_lst_free(void *content, size_t content_size)
 {
-	int		i;
-
-	i = 0;
-	while (str[i] != '\0' && str[i] != delimiter)
-		i++;
-	return (i);
+	content_size = 0;
+	if (content)
+		free(content);
 }

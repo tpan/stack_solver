@@ -1,23 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_wordlength.c                                    :+:      :+:    :+:   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/13 14:02:45 by tpan              #+#    #+#             */
-/*   Updated: 2017/03/20 20:02:06 by tpan             ###   ########.fr       */
+/*   Created: 2017/04/27 16:17:39 by tpan              #+#    #+#             */
+/*   Updated: 2017/04/27 16:20:55 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int	ft_wordlength(char *str, char delimiter)
-{
-	int		i;
-
-	i = 0;
-	while (str[i] != '\0' && str[i] != delimiter)
-		i++;
-	return (i);
-}
+#include "includes/push_swap.h"

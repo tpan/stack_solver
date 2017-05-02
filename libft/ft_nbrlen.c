@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_wordlength.c                                    :+:      :+:    :+:   */
+/*   ft_nbrlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tpan <marvin@42.fr>                        +#+  +:+       +#+        */
+/*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/13 14:02:45 by tpan              #+#    #+#             */
-/*   Updated: 2017/03/20 20:02:06 by tpan             ###   ########.fr       */
+/*   Created: 2017/03/11 13:53:39 by tpan              #+#    #+#             */
+/*   Updated: 2017/03/20 20:06:54 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_wordlength(char *str, char delimiter)
-{
-	int		i;
+/*
+** Returns the amount of digits in a number. Useful for preparing an array of
+** of chars to hold a number.
+*/
 
-	i = 0;
-	while (str[i] != '\0' && str[i] != delimiter)
-		i++;
-	return (i);
+size_t		ft_nbrlen(int nbr)
+{
+	size_t		len;
+
+	if (nbr == 0)
+		return (0);
+	len = 1;
+	while (nbr /= 10)
+		len++;
+	return (len);
 }

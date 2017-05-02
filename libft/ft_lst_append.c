@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_wordlength.c                                    :+:      :+:    :+:   */
+/*   ft_lst_append.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tpan <marvin@42.fr>                        +#+  +:+       +#+        */
+/*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/13 14:02:45 by tpan              #+#    #+#             */
-/*   Updated: 2017/03/20 20:02:06 by tpan             ###   ########.fr       */
+/*   Created: 2017/04/09 16:21:05 by tpan              #+#    #+#             */
+/*   Updated: 2017/04/09 16:24:51 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_wordlength(char *str, char delimiter)
+void	ft_lst_append(t_list **alst, t_list *new)
 {
-	int		i;
+	t_list *tmp;
 
-	i = 0;
-	while (str[i] != '\0' && str[i] != delimiter)
-		i++;
-	return (i);
+	if (!new || !alst)
+		return ;
+	tmp = *alst;
+	if (!*alst)
+		*alst = new;
+	else
+	{
+		tmp = *alst;
+		while (tmp->next)
+			tmp = tmp->next;
+		tmp->next = new;
+	}
 }

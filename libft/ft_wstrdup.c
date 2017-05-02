@@ -1,23 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_wordlength.c                                    :+:      :+:    :+:   */
+/*   ft_wstrdup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tpan <marvin@42.fr>                        +#+  +:+       +#+        */
+/*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/13 14:02:45 by tpan              #+#    #+#             */
-/*   Updated: 2017/03/20 20:02:06 by tpan             ###   ########.fr       */
+/*   Created: 2017/03/12 15:49:05 by tpan              #+#    #+#             */
+/*   Updated: 2017/03/12 15:52:58 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_wordlength(char *str, char delimiter)
+wchar_t		*ft_wstrdup(wchar_t *str)
 {
-	int		i;
+	wchar_t		*new_str;
+	int			i;
 
+	if (!str)
+		return (NULL);
 	i = 0;
-	while (str[i] != '\0' && str[i] != delimiter)
+	new_str = (wchar_t *)malloc(sizeof(wchar_t) * ft_wstrlen(str) + 1);
+	if (!new_str)
+		return (0);
+	while (str[i] != '\0')
+	{
+		new_str[i] = str[i];
 		i++;
-	return (i);
+	}
+	new_str[i] = '\0';
+	return (new_str);
 }

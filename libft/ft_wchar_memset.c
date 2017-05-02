@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_wordlength.c                                    :+:      :+:    :+:   */
+/*   ft_wchar_memset.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tpan <marvin@42.fr>                        +#+  +:+       +#+        */
+/*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/13 14:02:45 by tpan              #+#    #+#             */
-/*   Updated: 2017/03/20 20:02:06 by tpan             ###   ########.fr       */
+/*   Created: 2017/03/12 15:22:20 by tpan              #+#    #+#             */
+/*   Updated: 2017/03/12 15:24:06 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_wordlength(char *str, char delimiter)
+void		*ft_wchar_memset(void *b, wchar_t c, size_t len)
 {
-	int		i;
+	unsigned int	i;
+	wchar_t			*b2;
 
+	b2 = b;
 	i = 0;
-	while (str[i] != '\0' && str[i] != delimiter)
+	while (i < len)
+	{
+		b2[i] = (wchar_t)c;
 		i++;
-	return (i);
+	}
+	return (b);
 }

@@ -1,23 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_wordlength.c                                    :+:      :+:    :+:   */
+/*   ft_realloc.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/13 14:02:45 by tpan              #+#    #+#             */
-/*   Updated: 2017/03/20 20:02:06 by tpan             ###   ########.fr       */
+/*   Created: 2016/12/14 08:15:02 by tpan              #+#    #+#             */
+/*   Updated: 2016/12/14 08:21:46 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+/*
+**Takes a pointer and size, re-memory allocates to accommadate a larger buff
+*/
+#include <stdlib.h>
 
-int	ft_wordlength(char *str, char delimiter)
+char	*ft_realloc(char *ptr, size_t size)
 {
+	char	*temp;
 	int		i;
 
+	temp = ptr;
+	ptr = malloc(size);
 	i = 0;
-	while (str[i] != '\0' && str[i] != delimiter)
+	while (temp[i])
+	{
+		ptr[i] = temp[i];
 		i++;
-	return (i);
+	}
+	free(temp);
+	return (ptr);
 }
