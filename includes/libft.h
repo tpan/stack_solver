@@ -6,7 +6,7 @@
 /*   By: tpan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/31 18:59:29 by tpan              #+#    #+#             */
-/*   Updated: 2017/04/12 22:58:38 by tpan             ###   ########.fr       */
+/*   Updated: 2017/05/02 15:43:56 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 # define MAX(A, B) (((A) > (B)) ? (A) : (B))
 # define MIN(A, B) (((A) < (B)) ? (A) : (B))
 # define ABSVAL(A) ((A) < 0 > -(A) : (A))
+# define N_ELEMS(A) (sizeof(A) / sizeof((A)[0])
 
 typedef struct		s_list
 {
