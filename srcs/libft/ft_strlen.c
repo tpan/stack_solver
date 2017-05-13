@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tpan <marvin@42.fr>                        +#+  +:+       +#+        */
+/*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/08/16 14:07:22 by tpan              #+#    #+#             */
-/*   Updated: 2017/03/19 18:35:46 by tpan             ###   ########.fr       */
+/*   Created: 2017/05/13 16:09:30 by tpan              #+#    #+#             */
+/*   Updated: 2017/05/13 16:10:59 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 size_t	ft_strlen(char const *str)
 {
-	size_t i;
-
-	i = 0;
-	while (str[i] != '\0')
+char *start;
+start = (char *)str;
+	
+	while (*str != '\0')
 	{
-		i++;
+		str++;
 	}
-	return (i);
+	return (str - start);
 }
