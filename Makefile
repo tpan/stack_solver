@@ -6,7 +6,7 @@
 #    By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/05/02 15:52:03 by tpan              #+#    #+#              #
-#    Updated: 2017/05/13 17:59:47 by tpan             ###   ########.fr        #
+#    Updated: 2017/05/14 15:17:14 by tpan             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,23 +17,25 @@ FT_PRINTF = ./ft_printf/ft_printf.a
 CFLAGS = -Wall -Werror -Wextra
 DEBUGFLAGS = -fsanitize=address -g - o push_swap_debug
 LEAKCHECK = -g -o push_swap_leakcheck
-SRCFILES = 	push_swap.c \
-			read_input.c \
+SRCFILES = 	push_ops.c \
+			swap_ops.c \
+			rotate_ops.c \
+			basic_ops \
 
 SRC = $(addprefix $(SRCDIR),$(SRCF))
 OBJ = $(addprefix $(OBJDIR),$(SRCF:.c=.o))
 
 OBJDIR = ./obj/
 SRCDIR = ./srcs/
-LIBFTDIR = ./srcs/libft/
+LIBFTDIR = ./libft/
 FTPFDIR = ./ft_printf/
 INCDIR = ./includes/
 
 .PHONY: $(NAME), all, clean, fclean, re, $(LIBFT)
 
-all: $(LIBFT) $(NAME)
+all: $(LIBFT) $(FT_PRINTF) $(NAME)
 
-$(NAME): $(LIBFT)
+$(NAME): $(FT_PRINTF) $(LIBFT)
 	@echo "Compiling push_swap"
 	@$(CC) $(CFLAGS) -c -I$(INCDIR) $(SRC)
 	@mkdir -p $(OBJDIR)
