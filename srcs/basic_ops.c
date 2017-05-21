@@ -6,7 +6,7 @@
 /*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/02 18:46:25 by tpan              #+#    #+#             */
-/*   Updated: 2017/05/16 22:22:30 by tpan             ###   ########.fr       */
+/*   Updated: 2017/05/17 09:09:32 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ void		flip_the_top(t_swap **stack)
 
 	if (stack_length(*stack) < 2)
 		return ;
-	
 	a = *stack;
 	b = (*stack)->next;
 	c = (*stack)->next->next;
