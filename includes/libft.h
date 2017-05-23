@@ -6,7 +6,7 @@
 /*   By: tpan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/31 18:59:29 by tpan              #+#    #+#             */
-/*   Updated: 2017/05/02 15:43:56 by tpan             ###   ########.fr       */
+/*   Updated: 2017/05/22 19:11:04 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <unistd.h>
 # include <wchar.h>
 # include <stdarg.h>
+# include <limits.h>
 
 # define MAX(A, B) (((A) > (B)) ? (A) : (B))
 # define MIN(A, B) (((A) < (B)) ? (A) : (B))
@@ -39,6 +40,7 @@ char				*ft_strncpy(char *dest, const char *src, unsigned int n);
 void				ft_putchar(char c);
 void				ft_putstr(char *str);
 int					ft_atoi(const char *str);
+int					ft_atol(const char *str);
 int					ft_tolower(int c);
 int					ft_toupper(int c);
 int					ft_isalpha(int c);
@@ -124,4 +126,6 @@ wchar_t				*ft_wstrdup(wchar_t *str);
 void				ft_lst_free(void *content, size_t content_size);
 void				ft_lst_append(t_list **alst, t_list *new);
 int					ft_lst_len(t_list *begin_list);
+char				**ft_tab_add_one(char **src_tab, char *new_item);
+char				**ft_strtok(char *str, char *delim);
 #endif

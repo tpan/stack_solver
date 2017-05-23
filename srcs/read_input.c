@@ -6,7 +6,7 @@
 /*   By: tpan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/17 09:10:26 by tpan              #+#    #+#             */
-/*   Updated: 2017/05/21 16:59:05 by tpan             ###   ########.fr       */
+/*   Updated: 2017/05/22 19:40:08 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ static int			validate_input(char *arg)
 	int		i;
 	char	*arg_begin;
 
+	if (!arg)
+		return (0);
 	arg_begin = arg;
 	if (*arg == '-' || *arg == '+')
 		arg++;
@@ -51,17 +53,38 @@ static int			option_flag(char *arg, t_tracker *tracker)
 	if (arg && arg[i] == '-')
 	{
 		while (ft_isalpha(arg[i++]))
-			if (argc[i] != 'v' && arg[i] != 'c')
+			if (arg[i] != 'v' && arg[i] != 'c')
 				return (0);
 		if (ft_isdigit(arg[i]))
 			return (0);
-		if (ft_strchr(argc, 'v'))
+		if (ft_strchr(arg, 'v'))
 			tracker->debug = 1;
-		if (ft_strchr(argc, 'c'))
+		if (ft_strchr(arg, 'c'))
 			tracker->color = 1;
 		return (1);
 	}
 	return (0);
+}
+
+int		check_duplicates(t_swap *stack)
+{
+	t_swap		*cmp_stack;
+
+	cmp_stack = stack;
+	while (cmp_stack)
+	{
+		stack = cmp_stack->next;
+		while (stack)
+		{
+			if (cmp_stack->value == stack->value)
+			{
+				ft_putstr("Error\n");
+				return (1);
+			}
+			stack = stack->next;
+		}
+		cmp_stack = cmp_stack->next;
+	}
 }
 
 t_swap		*read_input_init_stack(char **argv, t_tracker *tracker)
@@ -69,27 +92,27 @@ t_swap		*read_input_init_stack(char **argv, t_tracker *tracker)
 	t_swap		*sa;
 	t_swap		*item;
 
-	while (is_option(*argv, tracker))
+	while (option_flag(*argv, tracker))
 		(++argv);
 	if (!validate_input(*argv))
 		return (NULL);
 	sa = (t_swap *)malloc(sizeof(t_swap));
 	ft_bzero(sa, sizeof(t_swap));
-	sa_value = ft_atoi(*argv);
+	sa->value = ft_atoi(*argv);
 	while (++*argv)
 	{
 		if (option_flag(*argv, tracker))
 			;
-		else if (!validate_output(*argv))
+		else if (!validate_input(*argv))
 			return (NULL);
 		else
 		{
 			item = (t_swap *)malloc(sizeof(t_swap));
 			ft_bzero(item, sizeof(t_swap));
-			item->calue = ft_atoi(argv);
+			item->value = ft_atoi(*argv);
 			stack_append(&sa, item);
 		}
 	}
-	tracker->input_cnt = stack_length(sa);
+	tracker->counter = stack_length(sa);
 	return (sa);
 }
