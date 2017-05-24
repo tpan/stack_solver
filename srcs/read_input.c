@@ -6,7 +6,7 @@
 /*   By: tpan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/17 09:10:26 by tpan              #+#    #+#             */
-/*   Updated: 2017/05/22 19:40:08 by tpan             ###   ########.fr       */
+/*   Updated: 2017/05/24 12:49:32 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,6 +113,6 @@ t_swap		*read_input_init_stack(char **argv, t_tracker *tracker)
 			stack_append(&sa, item);
 		}
 	}
-	tracker->counter = stack_length(sa);
+	tracker->counter = stack_len(sa);
 	return (sa);
 }

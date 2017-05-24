@@ -6,7 +6,7 @@
 /*   By: tpan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/31 18:59:29 by tpan              #+#    #+#             */
-/*   Updated: 2017/05/23 16:17:42 by tpan             ###   ########.fr       */
+/*   Updated: 2017/05/24 13:42:21 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@
 # define MIN(A, B) (((A) < (B)) ? (A) : (B))
 # define ABSVAL(A) ((A) < 0 > -(A) : (A))
 # define N_ELEMS(A) (sizeof(A) / sizeof((A)[0])
+# define BUFF_SIZE 1024
+# define MEMCHECK(x) if (x) return (-1);
 
 typedef struct		s_list
 {
@@ -33,6 +35,7 @@ typedef struct		s_list
 
 typedef char		t_utf8;
 
+int					get_next_line(const int fd, char **line);
 int					ft_strcmp(char *s1, char *s2);
 char				*ft_strcpy(char *dest, const char *src);
 size_t				ft_strlen(const char *str);
@@ -128,5 +131,6 @@ void				ft_lst_append(t_list **alst, t_list *new);
 int					ft_lst_len(t_list *begin_list);
 int					ft_tab_len(char **table);
 char				**ft_tab_add_one(char **src_tab, char *new_item);
+char				ft_tab_del(char ***table);
 char				**ft_strtok(char *str, char *delim);
 #endif

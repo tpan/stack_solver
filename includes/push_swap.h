@@ -6,7 +6,7 @@
 /*   By: tpan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/27 16:20:06 by tpan              #+#    #+#             */
-/*   Updated: 2017/05/23 22:33:04 by tpan             ###   ########.fr       */
+/*   Updated: 2017/05/24 12:40:47 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,15 @@
 # include "libft.h"
 # include "ft_printf.h"
 
+#define RED		"\x1b[31m"
+#define GREEN	"\x1b[31m"
+#define BOLD	"\x1b[1m"
+#define UL		"\x1b[4m"
+#define RESET	"\x1b[0m"
+
 typedef enum	e_op
 {	
-	INVALID = 0, SA, SB, SS, PA, PB, RA, RB, RR, RRA, RRB, RRR
+	INVALID , SA, SB, SS, PA, PB, RA, RB, RR, RRA, RRB, RRR
 }				t_op;
 
 typedef struct	s_swap
