@@ -6,31 +6,41 @@
 /*   By: tpan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/27 16:20:06 by tpan              #+#    #+#             */
-/*   Updated: 2017/05/16 22:06:37 by tpan             ###   ########.fr       */
+/*   Updated: 2017/05/23 22:33:04 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-#include "libft.h"
+# include "libft.h"
+# include "ft_printf.h"
 
 typedef enum	e_op
-{
+{	
 	INVALID = 0, SA, SB, SS, PA, PB, RA, RB, RR, RRA, RRB, RRR
 }				t_op;
 
 typedef struct	s_swap
 {
 	int			value;
-	s_swap		*next;
+	int			move_req_fw;
+	int			move_req_bw;
+	int			sb_req_fw;
+	int			sb_req_bw;
+	int			moves_req;
+	int			optimal_path;
+	struct s_swap		*next;
 }				t_swap;
 
 typedef struct	s_tracker
 {
 	t_op		current_operation;
+	int				a_height;
+	int				b_height;
 	int				debug;
 	int				color;
+	int				input_cnt;
 	size_t			counter;
 	t_swap			*op_log;
 }				t_tracker;
@@ -51,6 +61,7 @@ void			print_op_code(int code);
 void			print_output(t_swap **sa, t_swap **sb, t_tracker *tracker);
 void			stack_append(t_swap **stack, t_swap *to_add);
 int				stack_len(t_swap *stack);
+void			rot_largest(t_swap **sa, t_swap **sb, t_tracker *tracker);
 
 /*
 ** Base operations
@@ -81,8 +92,7 @@ void			rrr(t_swap **sa, t_swap **sb, t_tracker *tracker);
 ** Debug / Verbose options
 */
 
-void		print_stack(t_swap *stack);
-void		print_both_stacks(t_swap *sa, t_swap *sb, t_tracker *tracker);
+void		print_stacks(t_swap *sa, t_swap *sb, t_tracker *tracker);
 void		print_logs(t_tracker *tracker);
 void		log_operation(int current_op, t_tracker *tracker);
 

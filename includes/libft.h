@@ -6,7 +6,7 @@
 /*   By: tpan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/31 18:59:29 by tpan              #+#    #+#             */
-/*   Updated: 2017/05/22 19:11:04 by tpan             ###   ########.fr       */
+/*   Updated: 2017/05/23 16:17:42 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,6 +126,7 @@ wchar_t				*ft_wstrdup(wchar_t *str);
 void				ft_lst_free(void *content, size_t content_size);
 void				ft_lst_append(t_list **alst, t_list *new);
 int					ft_lst_len(t_list *begin_list);
+int					ft_tab_len(char **table);
 char				**ft_tab_add_one(char **src_tab, char *new_item);
 char				**ft_strtok(char *str, char *delim);
 #endif
