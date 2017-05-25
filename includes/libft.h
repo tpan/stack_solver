@@ -6,7 +6,7 @@
 /*   By: tpan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/31 18:59:29 by tpan              #+#    #+#             */
-/*   Updated: 2017/05/23 16:17:42 by tpan             ###   ########.fr       */
+/*   Updated: 2017/05/24 22:23:27 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,9 @@
 # include <stdarg.h>
 # include <limits.h>
 
+
+# define BUFF_SIZE 1024
+# define ERRCHECK(x) if (x) return (-1)
 # define MAX(A, B) (((A) > (B)) ? (A) : (B))
 # define MIN(A, B) (((A) < (B)) ? (A) : (B))
 # define ABSVAL(A) ((A) < 0 > -(A) : (A))
@@ -129,4 +132,5 @@ int					ft_lst_len(t_list *begin_list);
 int					ft_tab_len(char **table);
 char				**ft_tab_add_one(char **src_tab, char *new_item);
 char				**ft_strtok(char *str, char *delim);
+int					get_next_line(const int fd, char **line);
 #endif
