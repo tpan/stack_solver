@@ -6,11 +6,11 @@
 /*   By: tpan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/16 22:07:44 by tpan              #+#    #+#             */
-/*   Updated: 2017/05/16 22:13:32 by tpan             ###   ########.fr       */
+/*   Updated: 2017/05/17 08:57:38 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "../includes/push_swap.h"
 
 void		rra(t_swap **sa, t_swap **sb, t_tracker *tracker)
 {
