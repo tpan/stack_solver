@@ -6,7 +6,7 @@
 /*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/23 21:33:28 by tpan              #+#    #+#             */
-/*   Updated: 2017/05/25 13:46:54 by tpan             ###   ########.fr       */
+/*   Updated: 2017/05/25 21:06:29 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static int	*create_b_val_array(t_swap *stack, int **a_val_arr)
 		tmp_arr[i++] = stack->value;
 		stack = stack->next;
 	}
-	*a_val_arr = ft_int_sort_rev(tmp_arr, slen);
+	*a_val_arr = ft_int_rev_sort(tmp_arr, slen);
 	free(tmp_arr);
 	return (*a_val_arr);
 }

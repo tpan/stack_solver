@@ -6,7 +6,7 @@
 /*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/23 16:16:50 by tpan              #+#    #+#             */
-/*   Updated: 2017/05/25 14:05:03 by tpan             ###   ########.fr       */
+/*   Updated: 2017/05/25 21:52:27 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void			log_operations(int current_op, t_tracker *tracker)
 	stack_append(&(tracker->op_log), new_op);
 }
 
-void		print_log(t_tracker *tracker)
+void		print_logs(t_swap *sa, t_swap *sb, t_tracker *tracker)
 {
 	t_swap		*log;
 
@@ -38,7 +38,7 @@ void		print_log(t_tracker *tracker)
 		ft_printf(GREEN "OK\n" RESET);
 	else
 		ft_printf(RED "KO\n" RESET);
-	stack_free(tracker->op_log);
+	free_stack(tracker->op_log);
 }
 
 char		*opcode_to_str(t_op code)

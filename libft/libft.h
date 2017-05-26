@@ -6,7 +6,7 @@
 /*   By: tpan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/31 18:59:29 by tpan              #+#    #+#             */
-/*   Updated: 2017/05/25 11:10:48 by tpan             ###   ########.fr       */
+/*   Updated: 2017/05/25 21:12:43 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,4 +128,6 @@ wchar_t				*ft_wstrdup(wchar_t *str);
 void				ft_lst_free(void *content, size_t content_size);
 void				ft_lst_append(t_list **alst, t_list *new);
 int					ft_lst_len(t_list *begin_list);
+int					*ft_int_sort(int *arr, int len);
+int					*ft_rev_sort(int *arr, int len);
 #endif

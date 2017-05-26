@@ -6,7 +6,7 @@
 /*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/24 13:19:05 by tpan              #+#    #+#             */
-/*   Updated: 2017/05/25 13:55:04 by tpan             ###   ########.fr       */
+/*   Updated: 2017/05/25 21:45:55 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ int main(int argc, char **argv)
 	tracker.silence = 1;
 	if (argc > 1)
 	{
-		if ((new_argv = split_args(++argv)))
+		if ((new_argv = parse_args(++argv)))
 			sa = read_input(new_argv, &tracker);
 		else
 			sa = read_input(argv, &tracker);

@@ -6,7 +6,7 @@
 /*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/25 14:49:41 by tpan              #+#    #+#             */
-/*   Updated: 2017/05/25 14:58:01 by tpan             ###   ########.fr       */
+/*   Updated: 2017/05/25 22:00:15 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void		print_output(t_swap **sa, t_swap **sb, t_tracker *tracker)
 {
 	if (tracker->debug)
 	{
-		log_operations(tracker->current_operation, tracker);
+		log_operation(tracker->current_operation, tracker);
 		print_stacks(*sa, *sb, tracker);
 	}
 	else if (!tracker->silence)

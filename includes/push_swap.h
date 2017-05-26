@@ -6,7 +6,7 @@
 /*   By: tpan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/27 16:20:06 by tpan              #+#    #+#             */
-/*   Updated: 2017/05/25 10:18:57 by tpan             ###   ########.fr       */
+/*   Updated: 2017/05/25 22:05:34 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,37 +51,17 @@ typedef struct	s_tracker
 	t_swap			*op_log;
 }				t_tracker;
 
-/*
-**	Control Sections
-*/
-
 t_swap			*read_input(char **av, t_tracker *tracker);
-void			sort_stack(t_swap **sa, t_swap **sb, t_tracker *tracker);
-
-/*
-** Validation and helper functions
-*/
-
 int				is_valid(char *arg);
 void			print_op_code(int code);
 void			print_output(t_swap **sa, t_swap **sb, t_tracker *tracker);
 void			stack_append(t_swap **stack, t_swap *to_add);
 int				stack_len(t_swap *stack);
 void			rot_largest(t_swap **sa, t_swap **sb, t_tracker *tracker);
-
-/*
-** Base operations
-*/
-
 void			flip_the_top(t_swap **stack);
 void			push_on_top(t_swap **s2, t_swap **s1);
 void			rotate_forward(t_swap **stack);
 void			rotate_backward(t_swap **stack);
-
-/*
-** Mix operations and debug options.
-*/
-
 void			pa(t_swap **sa, t_swap **sb, t_tracker *tracker);
 void			pb(t_swap **sa, t_swap **sb, t_tracker *tracker);
 void			sa(t_swap **sa, t_swap **sb, t_tracker *tracker);
@@ -93,13 +73,28 @@ void			rr(t_swap **sa, t_swap **sb, t_tracker *tracker);
 void			rra(t_swap **sa, t_swap **sb, t_tracker *tracker);
 void			rrb(t_swap **sa, t_swap **sb, t_tracker *tracker);
 void			rrr(t_swap **sa, t_swap **sb, t_tracker *tracker);
+void			print_stacks(t_swap *sa, t_swap *sb, t_tracker *tracker);
+void			print_logs(t_swap *sa, t_tracker *tracker);
+void			log_operation(int current_op, t_tracker *tracker);
+void			execute_instructions(t_swap **stack_a, t_swap **stack_b,
+												t_tracker *tracker, t_op op);
+void			rot_smallest_to_top(t_swap **sa, t_swap **sb,
+												t_tracker *tracker);
+void			rot_largest_to_top(t_swap **sa, t_swap **sb,
+												t_tracker *tracker);
+void			free_stack(t_swap *stack);
+char			**parse_args(char **argv);
+int				check_duplicates(t_swap *stack);
+t_swap			*invalid_input_error(t_swap *sa);
+void			calculate_moves(t_swap *sa, t_swap *sb, t_tracker *tracker);
+t_swap			*find_optimal_path(t_swap *sa);
+t_op			*init_ops(t_swap *element, t_op *ops);
 
 /*
-** Debug / Verbose options
+** All SORTS of functions.
 */
 
-void		print_stacks(t_swap *sa, t_swap *sb, t_tracker *tracker);
-void		print_logs(t_tracker *tracker);
-void		log_operation(int current_op, t_tracker *tracker);
-
+void			bubblesque_sort(t_swap **sa, t_swap **sb, t_tracker *tracker);
+int				is_sorted(t_swap *stack);
+void			sort_stacks(t_swap **sa, t_swap **sb, t_tracker *tracker);
 #endif

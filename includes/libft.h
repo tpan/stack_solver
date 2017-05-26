@@ -6,7 +6,7 @@
 /*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/25 18:16:47 by tpan              #+#    #+#             */
-/*   Updated: 2017/05/25 18:16:56 by tpan             ###   ########.fr       */
+/*   Updated: 2017/05/25 21:43:29 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,4 +135,9 @@ char				**ft_tab_add_one(char **src_tab, char *new_item);
 char				ft_tab_del(char ***table);
 char				**ft_strtok(char *str, char *delim);
 int					get_next_line(const int fd, char **line);
+int					*ft_int_sort(int *arr, int length);
+int					*ft_int_rev_sort(int *arr, int length);
+int					ft_smallest_int(int *arr, int size);
+int					ft_ints_arr_sorted(int *ints, int len);
+
 #endif

@@ -6,7 +6,7 @@
 /*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/25 14:58:23 by tpan              #+#    #+#             */
-/*   Updated: 2017/05/25 15:14:18 by tpan             ###   ########.fr       */
+/*   Updated: 2017/05/25 22:02:01 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int				main(int argc, char **argv)
 				print_stacks(sa, sb, &tracker);
 			sort_selection(&sa, &sb, &tracker);
 			if (tracker.debug)
-				print_log(sa, &tracker);
+				print_logs(sa, &tracker);
 		}
 		free_stack(sa);
 	}
