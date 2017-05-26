@@ -6,7 +6,7 @@
 #    By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/05/02 15:52:03 by tpan              #+#    #+#              #
-#    Updated: 2017/05/26 15:17:16 by tpan             ###   ########.fr        #
+#    Updated: 2017/05/26 16:34:07 by tpan             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -102,14 +102,10 @@ re: fclean all
 
 debug: $(LIBFT) $(FT_PRINTF)
 	@echo "Compiling push_swap with debugging options"
-	$(CC) $(CFLAGS) $(SRC) $(PSMAIN) $(LIBFT) $(FT_PRINTF) -I$(INCDIR)
-	$(DEBUGFLAGS) -o push_swap_debug
-	$(CC) $(CFLAGS) $(SRC) $(CMAIN) $(LIBFT) $(FT_PRINTF) -I$(INCDIR)
-	$(DEBUGFLAGS) -o checker_debug
+	$(CC) $(CFLAGS) $(SRC) $(PSMAIN) $(LIBFT) $(FT_PRINTF) -I$(INCDIR) $(DEBUGFLAGS) -o push_swap_debug
+	$(CC) $(CFLAGS) $(SRC) $(CMAIN) $(LIBFT) $(FT_PRINTF) -I$(INCDIR) $(DEBUGFLAGS) -o checker_debug
 
 leakcheck: $(LIBFT) $(FT_PRINTF)
 	@echo "Compiling for leak checks with valgrind"
-	$(CC) $(CFLAGS) $(SRC) $(PSMAIN) $(LIBFT) $(FT_PRINTF) -I$(INCDIR)
-	$(LEAKCHECK) -o push_swap_leakcheck
-	$(CC) $(CFLAGS) $(SRC) $(CMAIN) $(LIBFT) $(FT_PRINTF) -I$(INCDIR)
-	$(LEAKCHECK) -o checker_leakcheck
+	$(CC) $(CFLAGS) $(SRC) $(PSMAIN) $(LIBFT) $(FT_PRINTF) -I$(INCDIR) $(LEAKCHECK) -o push_swap_leakcheck
+	$(CC) $(CFLAGS) $(SRC) $(CMAIN) $(LIBFT) $(FT_PRINTF) -I$(INCDIR) $(LEAKCHECK) -o checker_leakcheck
