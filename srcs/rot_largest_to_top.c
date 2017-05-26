@@ -6,7 +6,7 @@
 /*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/25 16:59:03 by tpan              #+#    #+#             */
-/*   Updated: 2017/05/25 22:03:14 by tpan             ###   ########.fr       */
+/*   Updated: 2017/05/26 08:50:00 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,11 @@ void			rot_largest_to_top(t_swap **sa, t_swap **sb,
 	{
 		rot = stack_len(*sb) - lg_index;
 		rot_code = RRB;
+	}
+	else
+	{
+		rot = lg_index;
+		rot_code = RB;
 	}
 	ops = (t_op *)malloc(sizeof(t_op) * (rot + 1));
 	ft_bzero(ops, sizeof(t_op) * (rot + 1));

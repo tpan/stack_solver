@@ -6,7 +6,7 @@
 /*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/23 16:16:50 by tpan              #+#    #+#             */
-/*   Updated: 2017/05/25 21:52:27 by tpan             ###   ########.fr       */
+/*   Updated: 2017/05/26 08:47:04 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void			log_operations(int current_op, t_tracker *tracker)
 	stack_append(&(tracker->op_log), new_op);
 }
 
-void		print_logs(t_swap *sa, t_swap *sb, t_tracker *tracker)
+void		print_logs(t_swap *sa, t_tracker *tracker)
 {
 	t_swap		*log;
 
