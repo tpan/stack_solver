@@ -6,7 +6,7 @@
 #    By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/05/02 15:52:03 by tpan              #+#    #+#              #
-#    Updated: 2017/05/26 10:36:06 by tpan             ###   ########.fr        #
+#    Updated: 2017/05/26 15:17:16 by tpan             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,8 +15,8 @@ CC = gcc
 LIBFT = ./libft/libft.a
 FT_PRINTF = ./ft_printf/ft_printf.a
 CFLAGS = -Wall -Werror -Wextra
-DEBUGFLAGS = -fsanitize=address -g - o push_swap_debug
-LEAKCHECK = -g -o push_swap_leakcheck
+DEBUGFLAGS = -fsanitize=address -g
+LEAKCHECK = -g
 SRCFILES = 	alt_sort.c \
 			calculate_moves.c \
 			debug_feature.c \
@@ -41,10 +41,10 @@ SRC = $(addprefix $(SRCDIR),$(SRCFILES))
 OBJ = $(addprefix $(OBJDIR),$(SRCFILES:.c=.o))
 
 CMAIN = $(addprefix $(SRCDIR),$(CMAINSRC))
-COBJ = $(addprefix $(SRCDIR),$(CMAINSRC:.c=.o))
+COBJ = $(addprefix $(OBJDIR),$(CMAINSRC:.c=.o))
 
 PSMAIN = $(addprefix $(SRCDIR),$(PSMAINSRC))
-PSOBJ = $(addprefix $(SRCDIR),$(PSMAINSRC:.c=.o))
+PSOBJ = $(addprefix $(OBJDIR),$(PSMAINSRC:.c=.o))
 
 OBJDIR = ./obj/
 SRCDIR = ./srcs/
@@ -54,22 +54,22 @@ INCDIR = ./includes/
 
 .PHONY: $(NAME), $(LIBFT), all, clean, fclean, re
 
-all: $(LIBFT) $(FT_PRINTF) checker  $(NAME)
+all: $(LIBFT) $(FT_PRINTF) checker $(NAME)
 
 $(NAME): $(LIBFT) $(FT_PRINTF) checker
 	@echo "Compiling push_swap"
 	@$(CC) $(CFLAGS) -c -I$(INCDIR) $(SRC) $(PSMAIN)
 	@mkdir -p $(OBJDIR)
-	@mv $(SRCFILES:.c=.o) $(PSMAINSRC:.=.o) $(OBJDIR)
+	@mv $(SRCFILES:.c=.o) $(PSMAINSRC:.c=.o) $(OBJDIR)
 	@$(CC) $(CFLAGS) -I$(INCDIR) -I$(LIBFTDIR) $(OBJ) $(LIBFT) $(PSOBJ) $(FT_PRINTF) -o $@
 	@echo "push_swap: Compiled"
 
 checker: $(LIBFT) $(FT_PRINTF)
 	@echo "Compiling pswap checker"
-	@$(CC) $(CFLAGS) -c -I$(INCDIR) $(SRC) $(PSMAIN)
+	@$(CC) $(CFLAGS) -c -I$(INCDIR) $(SRC) $(CMAIN)
 	@mkdir -p $(OBJDIR)
-	@mv $(SRCFILES:.c=.o) $(CMAINSRC:.=.o) $(OBJDIR)
-	@$(CC) $(CFLAGS) -I$(INCDIR) -I$(LIBFTDIR) $(OBJ) $(LIBFT) $(COBJ) $(FT_PRINTF) -o $@
+	@mv $(SRCFILES:.c=.o) $(CMAINSRC:.c=.o) $(OBJDIR)
+	@$(CC) $(CFLAGS) -I$(INCDIR) -I$(LIBFTDIR) $(OBJ) $(COBJ) $(LIBFT) $(FT_PRINTF) -o $@
 	@echo "checker: Compiled"
 
 $(LIBFT):

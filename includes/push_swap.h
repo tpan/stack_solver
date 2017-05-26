@@ -6,7 +6,7 @@
 /*   By: tpan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/27 16:20:06 by tpan              #+#    #+#             */
-/*   Updated: 2017/05/25 22:05:34 by tpan             ###   ########.fr       */
+/*   Updated: 2017/05/26 14:23:40 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include "ft_printf.h"
 
 #define RED		"\x1b[31m"
-#define GREEN	"\x1b[31m"
+#define GREEN	"\x1b[32m"
 #define BOLD	"\x1b[1m"
 #define UL		"\x1b[4m"
 #define RESET	"\x1b[0m"
@@ -51,11 +51,11 @@ typedef struct	s_tracker
 	t_swap			*op_log;
 }				t_tracker;
 
-t_swap			*read_input(char **av, t_tracker *tracker);
+t_swap			*read_input_init_stack(char **av, t_tracker *tracker);
 int				is_valid(char *arg);
 void			print_op_code(int code);
 void			print_output(t_swap **sa, t_swap **sb, t_tracker *tracker);
-void			stack_append(t_swap **stack, t_swap *to_add);
+void			append_node(t_swap **stack, t_swap *to_add);
 int				stack_len(t_swap *stack);
 void			rot_largest(t_swap **sa, t_swap **sb, t_tracker *tracker);
 void			flip_the_top(t_swap **stack);
@@ -75,7 +75,7 @@ void			rrb(t_swap **sa, t_swap **sb, t_tracker *tracker);
 void			rrr(t_swap **sa, t_swap **sb, t_tracker *tracker);
 void			print_stacks(t_swap *sa, t_swap *sb, t_tracker *tracker);
 void			print_logs(t_swap *sa, t_tracker *tracker);
-void			log_operation(int current_op, t_tracker *tracker);
+void			log_operations(int current_op, t_tracker *tracker);
 void			execute_instructions(t_swap **stack_a, t_swap **stack_b,
 												t_tracker *tracker, t_op op);
 void			rot_smallest_to_top(t_swap **sa, t_swap **sb,

@@ -6,7 +6,7 @@
 /*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/24 13:19:05 by tpan              #+#    #+#             */
-/*   Updated: 2017/05/25 21:45:55 by tpan             ###   ########.fr       */
+/*   Updated: 2017/05/26 13:56:46 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,9 +79,9 @@ int main(int argc, char **argv)
 	if (argc > 1)
 	{
 		if ((new_argv = parse_args(++argv)))
-			sa = read_input(new_argv, &tracker);
+			sa = read_input_init_stack(new_argv, &tracker);
 		else
-			sa = read_input(argv, &tracker);
+			sa = read_input_init_stack(argv, &tracker);
 		if (sa && !check_duplicates(sa))
 		{
 			do_ops(&sa, &sb, &tracker);

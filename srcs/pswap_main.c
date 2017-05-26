@@ -6,7 +6,7 @@
 /*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/25 14:58:23 by tpan              #+#    #+#             */
-/*   Updated: 2017/05/25 22:02:01 by tpan             ###   ########.fr       */
+/*   Updated: 2017/05/26 14:28:08 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,10 @@ static void		get_input(char **argv, t_swap **sa, t_tracker *tracker)
 	char		**new_argv;
 
 	if ((new_argv = parse_args(++argv)))
-		*sa = read_input(new_argv, tracker);
+		*sa = read_input_init_stack(new_argv, tracker);
 	else
-		*sa = read_input(argv, tracker);
-	tracker->counter = stack_len(*sa);
+		*sa = read_input_init_stack(argv, tracker);
+	tracker->input_cnt = stack_len(*sa);
 	if (new_argv)
 		ft_tab_del(&new_argv);
 }

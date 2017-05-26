@@ -6,11 +6,11 @@
 /*   By: tpan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/24 14:35:43 by tpan              #+#    #+#             */
-/*   Updated: 2017/05/24 14:46:20 by tpan             ###   ########.fr       */
+/*   Updated: 2017/05/26 13:30:59 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "libft.h"
 
 static t_list		*read_fd(int fd)
 {

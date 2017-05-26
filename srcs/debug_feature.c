@@ -6,7 +6,7 @@
 /*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/23 16:16:50 by tpan              #+#    #+#             */
-/*   Updated: 2017/05/26 08:47:04 by tpan             ###   ########.fr       */
+/*   Updated: 2017/05/26 15:23:33 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void			log_operations(int current_op, t_tracker *tracker)
 	new_op = (t_swap *)malloc(sizeof(t_swap));
 	ft_bzero(new_op, sizeof(t_swap));
 	new_op->value = current_op;
-	stack_append(&(tracker->op_log), new_op);
+	append_node(&(tracker->op_log), new_op);
 }
 
 void		print_logs(t_swap *sa, t_tracker *tracker)
@@ -35,9 +35,9 @@ void		print_logs(t_swap *sa, t_tracker *tracker)
 	ft_putnbr(stack_len(tracker->op_log));
 	ft_putstr(" total operations.\n");
 	if (is_sorted(sa))
-		ft_printf(GREEN "OK\n" RESET);
+		ft_printf("%sOK\n",GREEN ,RESET);
 	else
-		ft_printf(RED "KO\n" RESET);
+		ft_printf("%sKO\n",GREEN ,RESET);
 	free_stack(tracker->op_log);
 }
 

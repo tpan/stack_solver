@@ -6,7 +6,7 @@
 /*   By: tpan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/17 09:10:26 by tpan              #+#    #+#             */
-/*   Updated: 2017/05/25 16:56:05 by tpan             ###   ########.fr       */
+/*   Updated: 2017/05/26 15:28:02 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static int			validate_input(char *input, t_swap *sa)
 	i = 0;
 	if (ft_isdigit(input[0]))
 		while (input[++i])
-			if (!ft_isalpha(input[i]))
+			if (!ft_isdigit(input[i]))
 				invalid_input_error(sa);
 	i = 0;
 	if (input[0] == '-' && ft_isalpha(input[1]))
@@ -126,7 +126,7 @@ t_swap				*read_input_init_stack(char **argv, t_tracker *tracker)
 		if (!option_flag(*argv, tracker) && validate_input(*argv, sa))
 		{
 			element = create_list_element(argv);
-			stack_append(&sa, element);
+			append_node(&sa, element);
 		}
 		return (sa);
 }

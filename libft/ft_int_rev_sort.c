@@ -6,14 +6,14 @@
 /*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/25 11:44:15 by tpan              #+#    #+#             */
-/*   Updated: 2017/05/25 13:45:19 by tpan             ###   ########.fr       */
+/*   Updated: 2017/05/26 13:59:15 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** ft_rev_int_sort takes an array of ints and returns a new array with the ints
+** ft_int_rev_sort takes an array of ints and returns a new array with the ints
 ** sorted from largest to smallest.
 */
 
@@ -51,7 +51,7 @@ static int		all_used(int *used, int len)
 	return (1);
 }
 
-int				*ft_int_sort(int *arr, int len)
+int				*ft_int_rev_sort(int *arr, int len)
 {
 	int		i;
 	int		*sorted;
