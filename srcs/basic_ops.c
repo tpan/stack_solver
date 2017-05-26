@@ -6,7 +6,7 @@
 /*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/02 18:46:25 by tpan              #+#    #+#             */
-/*   Updated: 2017/05/17 09:09:32 by tpan             ###   ########.fr       */
+/*   Updated: 2017/05/25 10:36:04 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,11 @@ void		flip_the_top(t_swap **stack)
 	t_swap		*b;
 	t_swap		*c;
 
-	if (stack_length(*stack) < 2)
+	if (stack_len(*stack) < 2)
 		return ;
 	a = *stack;
 	b = (*stack)->next;
 	c = (*stack)->next->next;
-
 	*stack = b;
 	(*stack)->next = a;
 	(*stack)->next->next = c;
@@ -60,7 +59,7 @@ void		rotate_forward(t_swap **stack)
 	t_swap		*tmp;
 	t_swap		*iter;
 
-	if (stack_length(*stack) < 2)
+	if (stack_len(*stack) < 2)
 		return ;
 	tmp = *stack;
 	*stack = (*stack)->next;
@@ -81,7 +80,7 @@ void		rotate_backward(t_swap **stack)
 	t_swap		*tmp;
 	t_swap		*iter;
 
-	if (stack_length(*stack) < 2)
+	if (stack_len(*stack) < 2)
 		return;
 	tmp = *stack;
 	iter = *stack;

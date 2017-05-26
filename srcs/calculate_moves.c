@@ -6,11 +6,36 @@
 /*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/23 21:33:28 by tpan              #+#    #+#             */
-/*   Updated: 2017/05/23 22:36:26 by tpan             ###   ########.fr       */
+/*   Updated: 2017/05/25 13:46:54 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+/*
+** Create a list of values in stack b, from largest to smallest.
+*/
+
+static int	*create_b_val_array(t_swap *stack, int **a_val_arr)
+{
+	int		i;
+	int		slen;
+	int		*tmp_arr;
+
+	slen = stack_len(stack);
+	if (!stack || !(tmp_arr = (int *)malloc(sizeof(int) * slen)))
+		return (NULL);
+	ft_bzero(tmp_arr, sizeof(int) * slen);
+	i = 0;
+	while (stack)
+	{
+		tmp_arr[i++] = stack->value;
+		stack = stack->next;
+	}
+	*a_val_arr = ft_int_sort_rev(tmp_arr, slen);
+	free(tmp_arr);
+	return (*a_val_arr);
+}
 
 /*
 ** Finds the values that precede and follow the current value that is inserted
@@ -74,7 +99,7 @@ void		calculate_moves(t_swap *sa, t_swap *sb, t_tracker *tracker)
 	a_cur_depth = 0;
 	tracker->a_height = stack_len(sa);
 	tracker->b_height = stack_len(sb);
-	b_vals_in_order = create_b_value_array(sb, tracker, &b_vals_in_order);
+	b_vals_in_order = create_b_val_array(sb, &b_vals_in_order);
 	while (sa)
 	{
 		sa->move_req_fw = a_cur_depth;

@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   data_utility.c                                     :+:      :+:    :+:   */
+/*   utility.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/21 17:47:25 by tpan              #+#    #+#             */
-/*   Updated: 2017/05/21 18:25:46 by tpan             ###   ########.fr       */
+/*   Updated: 2017/05/25 15:25:22 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
 /*
-**
+** Appends an element to the stack list.
 */
 
 void		append_node(t_swap **stack, t_swap *to_add)
@@ -51,3 +51,30 @@ int		stack_length(t_swap *stack)
 	return (i);
 }
 
+/*
+** Frees the remaining stack at the end of the program.
+*/
+
+void		free_stack(t_swap *stack)
+{
+	t_swap *tmp_stack;
+
+	tmp_stack = stack;
+	while (stack)
+	{
+		stack = stack->next;
+		free(tmp_stack);
+		tmp_stack = stack;
+	}
+}
+
+/*
+** Frees the stack and throws an error.
+*/
+
+t_swap		*invalid_input_error(t_swap *sa)
+{
+	free_stack(sa);
+	ft_printf(RED"Error\n"RESET);
+	exit(EXIT_FAILURE);
+}

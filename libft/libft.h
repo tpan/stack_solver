@@ -6,7 +6,7 @@
 /*   By: tpan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/31 18:59:29 by tpan              #+#    #+#             */
-/*   Updated: 2017/05/17 10:05:30 by tpan             ###   ########.fr       */
+/*   Updated: 2017/05/25 11:10:48 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@
 # define MIN(A, B) (((A) < (B)) ? (A) : (B))
 # define ABSVAL(A) ((A) < 0 > -(A) : (A))
 # define N_ELEMS(A) (sizeof(A) / sizeof((A)[0])
+# define BUFF_SIZE 1024
+# define ERRCHECK(x) if (x) return (-1);
 
 typedef struct		s_list
 {
@@ -40,6 +42,7 @@ char				*ft_strncpy(char *dest, const char *src, unsigned int n);
 void				ft_putchar(char c);
 void				ft_putstr(char *str);
 int					ft_atoi(const char *str);
+long				ft_atol(const char *str);
 int					ft_tolower(int c);
 int					ft_toupper(int c);
 int					ft_isalpha(int c);

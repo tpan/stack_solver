@@ -6,11 +6,11 @@
 /*   By: tpan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/11 21:03:27 by tpan              #+#    #+#             */
-/*   Updated: 2016/12/20 01:50:53 by tpan             ###   ########.fr       */
+/*   Updated: 2017/05/24 14:02:13 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "libft.h"
 
 static t_list		*read_fd(int fd)
 {
@@ -54,7 +54,7 @@ int					get_next_line(const int fd, char **line)
 
 	i = 0;
 	ret = 0;
-	MEMCHECK((fd < 0 || line == NULL || read(fd, buf, 0) < 0));
+	ERRCHECK((fd < 0 || line == NULL || read(fd, buf, 0) < 0));
 	nd = read_fd(fd);
 	while (!ft_strchr(nd->content, '\n') && (ret = read(fd, buf, BUFF_SIZE)))
 		join(nd, ft_strndup(buf, ret), ret);
@@ -64,7 +64,7 @@ int					get_next_line(const int fd, char **line)
 		return (0);
 	}
 	ptr = nd->content;
-	i = ft_wordlength(ptr, i, '\n');
+	i = ft_wordlength(ptr, '\n');
 	*line = (ptr[i] == '\n') ? (ft_strndup(ptr, i)) : (ft_strdup(nd->content));
 	if ((ret == 0 && ptr[i] == 0))
 		ft_strclr((char*)(nd->content));

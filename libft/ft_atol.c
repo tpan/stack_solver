@@ -6,13 +6,13 @@
 /*   By: tpan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/16 12:31:02 by tpan              #+#    #+#             */
-/*   Updated: 2017/05/22 13:18:39 by tpan             ###   ########.fr       */
+/*   Updated: 2017/05/25 11:10:22 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int	ft_atol(unsigned char *str)
+int	ft_atol(char const *str)
 {
 	int				is_negative;
 	long				nbr;

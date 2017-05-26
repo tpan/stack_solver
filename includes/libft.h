@@ -6,7 +6,7 @@
 /*   By: tpan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/31 18:59:29 by tpan              #+#    #+#             */
-/*   Updated: 2017/05/24 13:42:21 by tpan             ###   ########.fr       */
+/*   Updated: 2017/05/24 14:02:42 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 # define ABSVAL(A) ((A) < 0 > -(A) : (A))
 # define N_ELEMS(A) (sizeof(A) / sizeof((A)[0])
 # define BUFF_SIZE 1024
-# define MEMCHECK(x) if (x) return (-1);
+# define ERRCHECK(x) if (x) return (-1);
 
 typedef struct		s_list
 {

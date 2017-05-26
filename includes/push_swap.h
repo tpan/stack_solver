@@ -6,7 +6,7 @@
 /*   By: tpan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/27 16:20:06 by tpan              #+#    #+#             */
-/*   Updated: 2017/05/24 12:40:47 by tpan             ###   ########.fr       */
+/*   Updated: 2017/05/25 10:18:57 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 
 typedef enum	e_op
 {	
-	INVALID , SA, SB, SS, PA, PB, RA, RB, RR, RRA, RRB, RRR
+	NOTVALID = 0, SA, SB, SS, PA, PB, RA, RB, RR, RRA, RRB, RRR
 }				t_op;
 
 typedef struct	s_swap
@@ -45,7 +45,7 @@ typedef struct	s_tracker
 	int				a_height;
 	int				b_height;
 	int				debug;
-	int				color;
+	int				silence;
 	int				input_cnt;
 	size_t			counter;
 	t_swap			*op_log;

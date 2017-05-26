@@ -6,7 +6,7 @@
 /*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/23 16:16:50 by tpan              #+#    #+#             */
-/*   Updated: 2017/05/24 12:42:36 by tpan             ###   ########.fr       */
+/*   Updated: 2017/05/25 14:05:03 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ void		print_log(t_tracker *tracker)
 		ft_printf(GREEN "OK\n" RESET);
 	else
 		ft_printf(RED "KO\n" RESET);
+	stack_free(tracker->op_log);
 }
 
 char		*opcode_to_str(t_op code)
@@ -65,7 +66,7 @@ char		*opcode_to_str(t_op code)
 	else if (code == RRR)
 		return (ft_strdup("rrr"));
 	else
-		return (ft_strdup("ERROR"));
+		return (ft_strdup("START"));
 }
 
 void		print_stacks(t_swap *sa, t_swap *sb, t_tracker *tracker)

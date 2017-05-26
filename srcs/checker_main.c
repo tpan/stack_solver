@@ -6,7 +6,7 @@
 /*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/24 13:19:05 by tpan              #+#    #+#             */
-/*   Updated: 2017/05/24 13:37:47 by tpan             ###   ########.fr       */
+/*   Updated: 2017/05/25 13:55:04 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,27 +18,27 @@
 
 static t_op	str_to_opcode(char *line)
 {
-	if (ft_strequ(line, "sa")
+	if (ft_strequ(line, "sa"))
 		return (SA);
-	else if (ft_strequ(line, "sb")
+	else if (ft_strequ(line, "sb"))
 		return (SB);
-	else if (ft_strequ(line, "ss")
+	else if (ft_strequ(line, "ss"))
 		return (SS);
-	else if (ft_strequ(line, "pa")
+	else if (ft_strequ(line, "pa"))
 		return (PA);
-	else if (ft_strequ(line, "pb")
+	else if (ft_strequ(line, "pb"))
 		return (PB);
-	else if (ft_strequ(line, "ra")
+	else if (ft_strequ(line, "ra"))
 		return (RA);
-	else if (ft_strequ(line, "rb")
+	else if (ft_strequ(line, "rb"))
 		return (RB);
-	else if (ft_strequ(line, "rr")
+	else if (ft_strequ(line, "rr"))
 		return (RR);
-	else if (ft_strequ(line, "rra")
+	else if (ft_strequ(line, "rra"))
 		return (RRA);
-	else if (ft_strequ(line, "rrb")
+	else if (ft_strequ(line, "rrb"))
 		return (RRB);
-	else if (ft_strequ(line, "rrr")
+	else if (ft_strequ(line, "rrr"))
 		return (RRR);
 	else
 		return (INVALID);
@@ -59,4 +59,39 @@ static void			do_ops(t_swap **sa, t_swap **sb, t_tracker *tracker)
 		operation = str_to_opcode(line);
 		execute_instructions(sa, sb, tracker, operation);
 	}
+	if (operation == NOTVALID)
+	{
+		ft_printf(RED"Error\n");
+		free_stack(*sa);
+		exit(0);
+	}
+}
+
+int main(int argc, char **argv)
+{
+	t_swap		*sa;
+	t_swap		*sb;
+	t_tracker	tracker;
+	char		**new_argv;
+
+	ft_bzero(&tracker, sizeof(t_tracker));
+	tracker.silence = 1;
+	if (argc > 1)
+	{
+		if ((new_argv = split_args(++argv)))
+			sa = read_input(new_argv, &tracker);
+		else
+			sa = read_input(argv, &tracker);
+		if (sa && !check_duplicates(sa))
+		{
+			do_ops(&sa, &sb, &tracker);
+			if (is_sorted(sa) && sb == NULL)
+				ft_printf(GREEN"OK\n"RESET);
+			else
+				ft_printf(RED"KO\n"RESET);
+			if (new_argv)
+				ft_tab_del(&new_argv);
+		}
+	}
+	return (0);
 }

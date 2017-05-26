@@ -6,7 +6,7 @@
 /*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/23 22:59:02 by tpan              #+#    #+#             */
-/*   Updated: 2017/05/23 23:26:34 by tpan             ###   ########.fr       */
+/*   Updated: 2017/05/25 12:26:16 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,4 +65,54 @@ t_op		*do_rrr(t_swap *element, t_op *op)
 	op[i++] = PB;
 	op[i] = 0;
 	return (op);
+}
+
+t_op		*sa_fw_sb_bw(t_swap *element, t_op *op)
+{
+	int			i;
+	int			rot;
+
+	i = 0;
+	op = (t_op *)malloc(sizeof(t_op) * (element->moves_req + 1));
+	rot = element->move_req_fw;
+	while (i < rot)
+		op[i++] = RA;
+	rot += element->sb_req_bw;
+	while (i < rot)
+		op[i++] = RRB;
+	op[i++] = PB;
+	op[i] = 0;
+	return (op);
+}
+
+t_op		*sa_bw_sb_fw(t_swap *element, t_op *op)
+{
+	int			i;
+	int			rot;
+
+	i = 0;
+	op = (t_op *)malloc(sizeof(t_op) * (element->moves_req + 1));
+	rot = element->move_req_bw;
+	while (i < rot)
+		op[i++] = RRA;
+	rot += element->sb_req_fw;
+	while (i < rot)
+		op[i++] = RB;
+	op[i++] = PB;
+	op[i] = 0;
+	return (op);
+}
+
+t_op		*init_ops(t_swap *element, t_op *ops)
+{
+	if (element->optimal_path == 0)
+		return (do_rr(element, ops));
+	else if (element->optimal_path == 1)
+		return (do_rrr(element, ops));
+	else if (element->optimal_path == 2)
+		return (sa_fw_sb_bw(element, ops));
+	else if (element->optimal_path == 3)
+		return (sa_bw_sb_fw(element, ops));
+	else
+		return (NULL);
 }
