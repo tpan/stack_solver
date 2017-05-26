@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/11 21:03:27 by tpan              #+#    #+#             */
-/*   Updated: 2017/05/24 14:02:13 by tpan             ###   ########.fr       */
+/*   Created: 2017/05/24 14:35:43 by tpan              #+#    #+#             */
+/*   Updated: 2017/05/24 14:46:20 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "get_next_line.h"
 
 static t_list		*read_fd(int fd)
 {
@@ -37,17 +37,20 @@ static void			join(t_list *node, char const *buff, size_t size)
 	if (node->content == NULL)
 	{
 		node->content = ft_strndup(buff, size);
-		return ;
 	}
-	tmp = node->content;
-	node->content = ft_strjoin(tmp, buff);
-	free((void *)buff);
+	else
+	{
+		tmp = node->content;
+		node->content = ft_strjoin(tmp, buff);
+		free(tmp);
+	}
+	free((void*)(buff));
 }
 
 int					get_next_line(const int fd, char **line)
 {
-	size_t				i;
-	size_t				ret;
+	size_t			i;
+	size_t			ret;
 	char			*ptr;
 	char			buf[BUFF_SIZE];
 	t_list			*nd;
@@ -67,8 +70,8 @@ int					get_next_line(const int fd, char **line)
 	i = ft_wordlength(ptr, '\n');
 	*line = (ptr[i] == '\n') ? (ft_strndup(ptr, i)) : (ft_strdup(nd->content));
 	if ((ret == 0 && ptr[i] == 0))
-		ft_strclr((char*)(nd->content));
+		ft_strclr(nd->content);
 	nd->content = (ptr[i] == '\n') ? (ft_strdup(nd->content + (i + 1))) :
-		(nd->content + 0);
+		(nd->content);
 	return (1);
 }
