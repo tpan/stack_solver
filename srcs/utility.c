@@ -6,7 +6,7 @@
 /*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/21 17:47:25 by tpan              #+#    #+#             */
-/*   Updated: 2017/05/26 13:44:10 by tpan             ###   ########.fr       */
+/*   Updated: 2017/05/26 22:16:18 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void		append_node(t_swap **stack, t_swap *to_add)
 	if (!to_add || !stack)
 		return ;
 		tmp_stack = *stack;
-	if (!stack)
+	if (!*stack)
 		*stack = to_add;
 	else
 	{

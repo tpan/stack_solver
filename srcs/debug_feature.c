@@ -6,7 +6,7 @@
 /*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/23 16:16:50 by tpan              #+#    #+#             */
-/*   Updated: 2017/05/26 15:23:33 by tpan             ###   ########.fr       */
+/*   Updated: 2017/05/26 22:29:48 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ void		print_logs(t_swap *sa, t_tracker *tracker)
 	ft_putnbr(stack_len(tracker->op_log));
 	ft_putstr(" total operations.\n");
 	if (is_sorted(sa))
-		ft_printf("%sOK\n",GREEN ,RESET);
+		ft_printf("%sOK\n"GREEN,RESET);
 	else
-		ft_printf("%sKO\n",GREEN ,RESET);
+		ft_printf("%sKO\n"RED,RESET);
 	free_stack(tracker->op_log);
 }
 

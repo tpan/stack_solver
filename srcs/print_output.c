@@ -6,7 +6,7 @@
 /*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/25 14:49:41 by tpan              #+#    #+#             */
-/*   Updated: 2017/05/26 14:38:03 by tpan             ###   ########.fr       */
+/*   Updated: 2017/05/26 22:08:25 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void		print_op_code(int code)
 	else if (code == SS)
 		ft_putstr_fd("ss\n", 1);
 	else if (code == PA)
-		ft_putstr_fd("PA\n", 1);
+		ft_putstr_fd("pa\n", 1);
 	else if (code == PB)
 		ft_putstr_fd("pb\n", 1);
 	else if (code == RA)

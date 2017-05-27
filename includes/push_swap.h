@@ -6,7 +6,7 @@
 /*   By: tpan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/27 16:20:06 by tpan              #+#    #+#             */
-/*   Updated: 2017/05/26 14:23:40 by tpan             ###   ########.fr       */
+/*   Updated: 2017/05/26 22:25:53 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 
 typedef enum	e_op
 {	
-	NOTVALID = 0, SA, SB, SS, PA, PB, RA, RB, RR, RRA, RRB, RRR
+	NOTVALID, SA, SB, SS, PA, PB, RA, RB, RR, RRA, RRB, RRR
 }				t_op;
 
 typedef struct	s_swap

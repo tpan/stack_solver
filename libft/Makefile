@@ -6,7 +6,7 @@
 #    By: tpan <marvin@42.fr>                        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/10/31 18:58:43 by tpan              #+#    #+#              #
-#    Updated: 2017/05/26 13:41:59 by tpan             ###   ########.fr        #
+#    Updated: 2017/05/27 13:05:31 by tpan             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,17 +53,21 @@ OBJ 	= $(SRC:.c=.o)
 CC 	= -c -Wall -Wextra -Werror
 all: $(NAME)
 
-$(NAME): 
-	gcc $(SRC) $(CC)
-	ar rc $(NAME) $(OBJ)
-	ranlib $(NAME) 
+$(NAME):
+	@echo "compiling libft...."
+	@gcc $(SRC) $(CC)
+	@ar rc $(NAME) $(OBJ)
+	@ranlib $(NAME)
+	@echo "libft compiled"
 
 clean:
-	/bin/rm -f $(OBJ)
+	@echo "cleaning libft"
+	@/bin/rm -f $(OBJ)
 
 fclean: clean
-	/bin/rm -f $(NAME)
-	/bin/rm -f libft.h.gch
+	@echo "fcleaning libft"
+	@/bin/rm -f $(NAME)
+	@/bin/rm -f libft.h.gch
 
 re: fclean all 
 

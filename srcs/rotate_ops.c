@@ -6,7 +6,7 @@
 /*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/03 16:35:17 by tpan              #+#    #+#             */
-/*   Updated: 2017/05/05 20:57:06 by tpan             ###   ########.fr       */
+/*   Updated: 2017/05/27 12:46:53 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void		ra(t_swap **stacka, t_swap **stackb, t_tracker *tracker)
 {
 	rotate_forward(stacka);
 	tracker->counter++;
+	tracker->current_operation = RA;
 	print_output(stacka, stackb, tracker);
 }
 
@@ -31,6 +32,7 @@ void		rb(t_swap **stacka, t_swap **stackb, t_tracker *tracker)
 {
 	rotate_forward(stackb);
 	tracker->counter++;
+	tracker->current_operation = RB;
 	print_output(stacka, stackb, tracker);
 }
 
@@ -44,5 +46,6 @@ void		rr(t_swap **stacka, t_swap **stackb, t_tracker *tracker)
 	rotate_forward(stacka);
 	rotate_forward(stackb);
 	tracker->counter++;
+	tracker->current_operation = RR;
 	print_output(stacka, stackb, tracker);
 }

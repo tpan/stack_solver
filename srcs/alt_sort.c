@@ -6,7 +6,7 @@
 /*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/25 10:43:01 by tpan              #+#    #+#             */
-/*   Updated: 2017/05/25 21:41:43 by tpan             ###   ########.fr       */
+/*   Updated: 2017/05/27 12:22:23 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,10 @@ void		bubblesque_sort(t_swap **sa, t_swap **sb, t_tracker *tracker)
 		sm = tmp_arr[ft_smallest_int(create_a_val_array(*sa, &tmp_arr), slen)];
 		free(tmp_arr);
 		if (sm == (*sa)->value)
+		{
 			execute_instructions(sa, sb, tracker, PB);
+			slen = stack_len(*sa);
+		}
 		else if ((*sa)->value > (*sa)->next->value)
 			execute_instructions(sa, sb, tracker, SA);
 		else
