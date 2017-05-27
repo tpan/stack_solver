@@ -6,7 +6,7 @@
 /*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/25 11:44:15 by tpan              #+#    #+#             */
-/*   Updated: 2017/05/26 13:59:15 by tpan             ###   ########.fr       */
+/*   Updated: 2017/05/27 15:34:39 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static int		get_largest_unused_int(int *arr, int *used, int len)
 	set = 0;
 	while(i <len)
 	{
-		if ((arr[i] < largest || !set) && !used[i])
+		if ((arr[i] > largest || !set) && !used[i])
 		{
 			largest = arr[i];
 			lg_index = i;

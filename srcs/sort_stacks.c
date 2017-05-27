@@ -6,7 +6,7 @@
 /*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/25 19:42:24 by tpan              #+#    #+#             */
-/*   Updated: 2017/05/26 08:54:21 by tpan             ###   ########.fr       */
+/*   Updated: 2017/05/27 14:51:00 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ static void		final_push(t_swap **sa, t_swap **sb, t_tracker *tracker)
 	int		i;
 
 	rot_largest_to_top(sa, sb, tracker);
-	ops = (t_op *)malloc(sizeof(t_op) * (tracker->counter + 1));
+	ops = (t_op *)malloc(sizeof(t_op) * (tracker->input_cnt + 1));
 	i = 0;
 	while (i < tracker->input_cnt)
 		ops[i++] = PA;
