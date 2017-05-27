@@ -6,13 +6,13 @@
 /*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/25 16:59:03 by tpan              #+#    #+#             */
-/*   Updated: 2017/05/26 08:50:43 by tpan             ###   ########.fr       */
+/*   Updated: 2017/05/26 21:09:08 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-static int		find_smallest(t_swap *sb)
+static int		find_smallest(t_swap *sa)
 {
 	int			i;
 	int			sm_index;
@@ -20,17 +20,17 @@ static int		find_smallest(t_swap *sb)
 
 	i = 0;
 	sm_index = i;
-	curr_small = sb->value;
-	sb = sb->next;
-	while (sb)
+	curr_small = sa->value;
+	sa = sa->next;
+	while (sa)
 	{
 		i++;
-		if (sb->value > curr_small)
+		if (sa->value < curr_small)
 		{
-			curr_small = sb->value;
+			curr_small = sa->value;
 			sm_index = i;
 		}
-		sb = sb->next;
+		sa = sa->next;
 	}
 	return (sm_index);
 }
@@ -58,10 +58,10 @@ void			rot_smallest_to_top(t_swap **sa, t_swap **sb,
 	int		rot;
 	t_op	rot_code;
 
-	sm_index = find_smallest(*sb);
-	if (stack_len(*sb) - sm_index < sm_index)
+	sm_index = find_smallest(*sa);
+	if (stack_len(*sa) - sm_index < sm_index)
 	{
-		rot = stack_len(*sb) - sm_index;
+		rot = stack_len(*sa) - sm_index;
 		rot_code = RRA;
 	}
 	else
