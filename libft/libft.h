@@ -6,7 +6,7 @@
 /*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/25 18:16:47 by tpan              #+#    #+#             */
-/*   Updated: 2017/05/26 13:30:32 by tpan             ###   ########.fr       */
+/*   Updated: 2017/05/27 18:00:06 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ char				*ft_strncpy(char *dest, const char *src, unsigned int n);
 void				ft_putchar(char c);
 void				ft_putstr(char *str);
 int					ft_atoi(const char *str);
-int					ft_atol(const char *str);
+long				ft_atol(const char *str);
 int					ft_tolower(int c);
 int					ft_toupper(int c);
 int					ft_isalpha(int c);

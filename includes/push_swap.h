@@ -6,7 +6,7 @@
 /*   By: tpan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/27 16:20:06 by tpan              #+#    #+#             */
-/*   Updated: 2017/05/26 22:25:53 by tpan             ###   ########.fr       */
+/*   Updated: 2017/05/27 17:20:20 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,14 @@
 #define BOLD	"\x1b[1m"
 #define UL		"\x1b[4m"
 #define RESET	"\x1b[0m"
+#define ECOLE42	"        :::      ::::::::\n       :+:      :+:    :+:\n" p2
+#define p2		"    +:+ +:+         +:+  \n  +#+  +:+       +#+     \n" p3
+#define p3		"+#+#+#+#+#+   +#+        \n     #+#    #+#          \n" p4
+#define p4		"    ###   ########.fr    \n"
 
 typedef enum	e_op
 {	
-	NOTVALID, SA, SB, SS, PA, PB, RA, RB, RR, RRA, RRB, RRR
+	NOTVALID = 0, SA, SB, SS, PA, PB, RA, RB, RR, RRA, RRB, RRR
 }				t_op;
 
 typedef struct	s_swap

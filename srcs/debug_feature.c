@@ -6,7 +6,7 @@
 /*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/23 16:16:50 by tpan              #+#    #+#             */
-/*   Updated: 2017/05/26 22:29:48 by tpan             ###   ########.fr       */
+/*   Updated: 2017/05/27 16:37:32 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ void		print_logs(t_swap *sa, t_tracker *tracker)
 	ft_putnbr(stack_len(tracker->op_log));
 	ft_putstr(" total operations.\n");
 	if (is_sorted(sa))
-		ft_printf("%sOK\n"GREEN,RESET);
+		ft_printf(GREEN"%sOK\n"RESET);
 	else
-		ft_printf("%sKO\n"RED,RESET);
+		ft_printf(RED"%sKO\n"RESET);
 	free_stack(tracker->op_log);
 }
 
@@ -74,6 +74,7 @@ void		print_stacks(t_swap *sa, t_swap *sb, t_tracker *tracker)
 	char *op;
 
 	op = opcode_to_str(tracker->current_operation);
+	ft_printf(BOLD GREEN ECOLE42 RESET);
 	ft_printf(UL "Stack A             Stack B\n" RESET);
 	ft_printf(BOLD UL "----------  %3s  -----------\n" RESET, op);
 	while (sa || sb)

@@ -6,7 +6,7 @@
 #    By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/05/27 16:01:30 by tpan              #+#    #+#              #
-#    Updated: 2017/05/27 16:01:33 by tpan             ###   ########.fr        #
+#    Updated: 2017/05/27 16:34:44 by tpan             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,7 +52,7 @@ LIBFTDIR = ./libft/
 FTPFDIR = ./ft_printf/
 INCDIR = ./includes/
 
-.PHONY: $(NAME), $(LIBFT), all, clean, fclean, re
+.PHONY:$(NAME), all, clean, fclean, re
 
 all: $(LIBFT) $(FT_PRINTF) checker $(NAME)
 

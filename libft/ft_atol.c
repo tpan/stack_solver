@@ -6,13 +6,13 @@
 /*   By: tpan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/16 12:31:02 by tpan              #+#    #+#             */
-/*   Updated: 2017/05/25 11:10:22 by tpan             ###   ########.fr       */
+/*   Updated: 2017/05/27 17:59:42 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-int	ft_atol(char const *str)
+long	ft_atol(char const *str)
 {
 	int				is_negative;
 	long				nbr;
@@ -24,9 +24,9 @@ int	ft_atol(char const *str)
 		str++;
 	if (*str == '-')
 		is_negative = 1;
-	if ((*str == '+' || *str == '-'))
+	if (*str == '+' || *str == '-')
 		str++;
-	while (*str && (*str >= '0' && *str <= '9'))
+	while (*str && *str >= '0' && *str <= '9')
 	{
 		nbr *= 10;
 		nbr += (*str - '0');

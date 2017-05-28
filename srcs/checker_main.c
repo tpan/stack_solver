@@ -6,15 +6,11 @@
 /*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/24 13:19:05 by tpan              #+#    #+#             */
-/*   Updated: 2017/05/26 13:56:46 by tpan             ###   ########.fr       */
+/*   Updated: 2017/05/27 17:20:48 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-
-/*
-**
-*/
 
 static t_op	str_to_opcode(char *line)
 {
@@ -41,7 +37,7 @@ static t_op	str_to_opcode(char *line)
 	else if (ft_strequ(line, "rrr"))
 		return (RRR);
 	else
-		return (INVALID);
+		return (NOTVALID);
 }
 
 /*
@@ -54,7 +50,7 @@ static void			do_ops(t_swap **sa, t_swap **sb, t_tracker *tracker)
 	int			operation;
 
 	operation = 1;
-	while (operation != INVALID && get_next_line(0, &line))
+	while (operation != NOTVALID && get_next_line(0, &line))
 	{
 		operation = str_to_opcode(line);
 		execute_instructions(sa, sb, tracker, operation);
