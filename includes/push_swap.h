@@ -6,7 +6,7 @@
 /*   By: tpan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/27 16:20:06 by tpan              #+#    #+#             */
-/*   Updated: 2017/05/27 17:20:20 by tpan             ###   ########.fr       */
+/*   Updated: 2017/05/28 13:38:01 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 #define ECOLE42	"        :::      ::::::::\n       :+:      :+:    :+:\n" p2
 #define p2		"    +:+ +:+         +:+  \n  +#+  +:+       +#+     \n" p3
 #define p3		"+#+#+#+#+#+   +#+        \n     #+#    #+#          \n" p4
-#define p4		"    ###   ########.fr    \n"
+#define p4		"    ###   ########.us.org    \n"
 
 typedef enum	e_op
 {	
@@ -101,4 +101,5 @@ t_op			*init_ops(t_swap *element, t_op *ops);
 void			bubblesque_sort(t_swap **sa, t_swap **sb, t_tracker *tracker);
 int				is_sorted(t_swap *stack);
 void			sort_stacks(t_swap **sa, t_swap **sb, t_tracker *tracker);
+void			three_sort(t_swap **sa, t_swap **sb, t_tracker *tracker);
 #endif

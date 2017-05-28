@@ -6,7 +6,7 @@
 /*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/25 14:58:23 by tpan              #+#    #+#             */
-/*   Updated: 2017/05/26 14:28:08 by tpan             ###   ########.fr       */
+/*   Updated: 2017/05/28 13:37:06 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,9 @@
 
 static void		sort_selection(t_swap **sa, t_swap **sb, t_tracker *tracker)
 {
-	if (stack_len(*sa) < 10)
+	if (stack_len(*sa) <= 3)
+		three_sort(sa, sb, tracker);
+	else if (stack_len(*sa) < 10)
 		bubblesque_sort(sa, sb, tracker);
 	else
 		sort_stacks(sa, sb, tracker);

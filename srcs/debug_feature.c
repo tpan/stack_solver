@@ -6,7 +6,7 @@
 /*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/23 16:16:50 by tpan              #+#    #+#             */
-/*   Updated: 2017/05/27 16:37:32 by tpan             ###   ########.fr       */
+/*   Updated: 2017/05/28 12:40:40 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ void		print_stacks(t_swap *sa, t_swap *sb, t_tracker *tracker)
 		else if (sa && !sb)
 			ft_printf("%-11d   |   %11c\n", sa->value, ' ');
 		else if (!sa && sb)
-			ft_printf("%-11d   |   %11d\n", ' ', sb->value);
+			ft_printf("%-11c   |   %11d\n",' ', sb->value);
 		if (sa)
 			sa = sa->next;
 		if (sb)

@@ -6,7 +6,7 @@
 /*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/25 10:43:01 by tpan              #+#    #+#             */
-/*   Updated: 2017/05/27 12:22:23 by tpan             ###   ########.fr       */
+/*   Updated: 2017/05/28 14:25:01 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,30 @@ int			*create_a_val_array(t_swap *stack, int **a_val_arr)
 	*a_val_arr = ft_int_sort(tmp_arr, slen);
 	free(tmp_arr);
 	return (*a_val_arr);
+}
+
+/*
+** In case of a data set of three we must resort to the three_sort.
+*/
+
+void		three_sort(t_swap **sa, t_swap **sb, t_tracker *tracker)
+{
+	int		*tmp_arr;
+	int		sm;
+
+	while (!is_sorted(*sa))
+	{
+		sm = tmp_arr[ft_smallest_int(create_a_val_array(*sa, &tmp_arr), 3)];
+		free(tmp_arr);
+		if (((*sa)->value == sm) || (((*sa)->value > sm) && (*sa)->value < (*sa)->next->next->value))
+		{
+			execute_instructions(sa, sb, tracker, SA);
+		}
+		else
+		{
+			execute_instructions(sa, sb, tracker, RRA);
+		}
+	}
 }
 
 /*
