@@ -6,7 +6,7 @@
 /*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/25 10:43:01 by tpan              #+#    #+#             */
-/*   Updated: 2017/05/28 14:25:01 by tpan             ###   ########.fr       */
+/*   Updated: 2017/05/29 12:39:43 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,13 +51,14 @@ void		three_sort(t_swap **sa, t_swap **sb, t_tracker *tracker)
 		sm = tmp_arr[ft_smallest_int(create_a_val_array(*sa, &tmp_arr), 3)];
 		free(tmp_arr);
 		if (((*sa)->value == sm) || (((*sa)->value > sm) && (*sa)->value < (*sa)->next->next->value))
+			execute_instructions(sa, sb, tracker, SA);
+		else if ((((*sa)->value) > (*sa)->next->value) && ((*sa)->value) > (*sa)->next->next->value)
 		{
+			execute_instructions(sa, sb, tracker, RA);
 			execute_instructions(sa, sb, tracker, SA);
 		}
 		else
-		{
 			execute_instructions(sa, sb, tracker, RRA);
-		}
 	}
 }
 
