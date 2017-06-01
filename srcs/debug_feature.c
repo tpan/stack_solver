@@ -6,7 +6,7 @@
 /*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/23 16:16:50 by tpan              #+#    #+#             */
-/*   Updated: 2017/05/28 12:40:40 by tpan             ###   ########.fr       */
+/*   Updated: 2017/05/31 16:41:21 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,12 @@ void			log_operations(int current_op, t_tracker *tracker)
 	append_node(&(tracker->op_log), new_op);
 }
 
-void		print_logs(t_swap *sa, t_tracker *tracker)
+void			print_logs(t_swap *sa, t_tracker *tracker)
 {
 	t_swap		*log;
 
 	log = tracker->op_log;
-	while(log)
+	while (log)
 	{
 		print_op_code(log->value);
 		log = log->next;
@@ -41,7 +41,7 @@ void		print_logs(t_swap *sa, t_tracker *tracker)
 	free_stack(tracker->op_log);
 }
 
-char		*opcode_to_str(t_op code)
+char			*opcode_to_str(t_op code)
 {
 	if (code == SA)
 		return (ft_strdup("sa"));
@@ -69,14 +69,14 @@ char		*opcode_to_str(t_op code)
 		return (ft_strdup("START"));
 }
 
-void		print_stacks(t_swap *sa, t_swap *sb, t_tracker *tracker)
+void			print_stacks(t_swap *sa, t_swap *sb, t_tracker *tracker)
 {
-	char *op;
+	char	*op;
 
 	op = opcode_to_str(tracker->current_operation);
-	ft_printf(BOLD GREEN ECOLE42 RESET);
-	ft_printf(UL "Stack A             Stack B\n" RESET);
-	ft_printf(BOLD UL "----------  %3s  -----------\n" RESET, op);
+	ft_printf(BOLD, GREEN, ECOLE42, RESET);
+	ft_printf(UL, "Stack A             Stack B\n" RESET);
+	ft_printf(BOLD, UL "----------  %3s  -----------\n" RESET, op);
 	while (sa || sb)
 	{
 		if (sa && sb)
@@ -84,7 +84,7 @@ void		print_stacks(t_swap *sa, t_swap *sb, t_tracker *tracker)
 		else if (sa && !sb)
 			ft_printf("%-11d   |   %11c\n", sa->value, ' ');
 		else if (!sa && sb)
-			ft_printf("%-11c   |   %11d\n",' ', sb->value);
+			ft_printf("%-11c   |   %11d\n", ' ', sb->value);
 		if (sa)
 			sa = sa->next;
 		if (sb)

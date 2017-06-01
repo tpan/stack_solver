@@ -6,7 +6,7 @@
 #    By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/05/27 16:01:30 by tpan              #+#    #+#              #
-#    Updated: 2017/05/27 16:34:44 by tpan             ###   ########.fr        #
+#    Updated: 2017/05/31 18:52:03 by tpan             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,21 +54,26 @@ INCDIR = ./includes/
 
 .PHONY:$(NAME), all, clean, fclean, re
 
+
+
 all: $(LIBFT) $(FT_PRINTF) checker $(NAME)
 
-$(NAME): $(LIBFT) $(FT_PRINTF) checker
-	@echo "Compiling push_swap"
-	@$(CC) $(CFLAGS) -c -I$(INCDIR) $(SRC) $(PSMAIN)
+$(OBJ): $(SRC)
+	@$(CC) $(CFLAGS) -c -I$(INCDIR) $(SRC)
 	@mkdir -p $(OBJDIR)
-	@mv $(SRCFILES:.c=.o) $(PSMAINSRC:.c=.o) $(OBJDIR)
+	@mv $(SRCFILES:.c=.o) $(OBJDIR)
+
+$(NAME): $(LIBFT) $(FT_PRINTF) checker $(INCDIR)*.h $(OBJ)
+	@echo "Compiling push_swap"
+	@$(CC) $(CFLAGS) -c -I$(INCDIR) $(PSMAIN)
+	@mv $(PSMAINSRC:.c=.o) $(OBJDIR)
 	@$(CC) $(CFLAGS) -I$(INCDIR) -I$(LIBFTDIR) $(OBJ) $(LIBFT) $(PSOBJ) $(FT_PRINTF) -o $@
 	@echo "push_swap: Compiled"
 
-checker: $(LIBFT) $(FT_PRINTF)
+checker: $(LIBFT) $(FT_PRINTF) $(INCDIR)*.h $(OBJ)
 	@echo "Compiling pswap checker"
-	@$(CC) $(CFLAGS) -c -I$(INCDIR) $(SRC) $(CMAIN)
-	@mkdir -p $(OBJDIR)
-	@mv $(SRCFILES:.c=.o) $(CMAINSRC:.c=.o) $(OBJDIR)
+	@$(CC) $(CFLAGS) -c -I$(INCDIR) $(CMAIN)
+	@mv $(CMAINSRC:.c=.o) $(OBJDIR)
 	@$(CC) $(CFLAGS) -I$(INCDIR) -I$(LIBFTDIR) $(OBJ) $(COBJ) $(LIBFT) $(FT_PRINTF) -o $@
 	@echo "checker: Compiled"
 

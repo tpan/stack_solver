@@ -6,13 +6,13 @@
 /*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/24 13:19:05 by tpan              #+#    #+#             */
-/*   Updated: 2017/05/27 17:20:48 by tpan             ###   ########.fr       */
+/*   Updated: 2017/05/31 16:33:19 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-static t_op	str_to_opcode(char *line)
+static t_op			str_to_opcode(char *line)
 {
 	if (ft_strequ(line, "sa"))
 		return (SA);
@@ -63,7 +63,7 @@ static void			do_ops(t_swap **sa, t_swap **sb, t_tracker *tracker)
 	}
 }
 
-int main(int argc, char **argv)
+int					main(int argc, char **argv)
 {
 	t_swap		*sa;
 	t_swap		*sb;

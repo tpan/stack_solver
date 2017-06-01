@@ -6,7 +6,7 @@
 /*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/02 18:46:25 by tpan              #+#    #+#             */
-/*   Updated: 2017/05/25 10:36:04 by tpan             ###   ########.fr       */
+/*   Updated: 2017/05/31 15:51:13 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@
 
 void		flip_the_top(t_swap **stack)
 {
-	t_swap		*a;
-	t_swap		*b;
-	t_swap		*c;
+	t_swap	*a;
+	t_swap	*b;
+	t_swap	*c;
 
 	if (stack_len(*stack) < 2)
 		return ;
@@ -30,20 +30,20 @@ void		flip_the_top(t_swap **stack)
 	*stack = b;
 	(*stack)->next = a;
 	(*stack)->next->next = c;
-	return;
+	return ;
 }
 
 /*
 ** Pushs the top item from S2 and moves it onto the top of S1 (ie pa and pb)
 */
 
-void	push_on_top(t_swap **s2, t_swap **s1)
-{ 
-	t_swap			*tmp;
+void		push_on_top(t_swap **s2, t_swap **s1)
+{
+	t_swap	*tmp;
 
 	if (!*s1)
 		return ;
-	tmp =  *s1;
+	tmp = *s1;
 	*s1 = (*s1)->next;
 	tmp->next = *s2;
 	*s2 = tmp;
@@ -56,8 +56,8 @@ void	push_on_top(t_swap **s2, t_swap **s1)
 
 void		rotate_forward(t_swap **stack)
 {
-	t_swap		*tmp;
-	t_swap		*iter;
+	t_swap	*tmp;
+	t_swap	*iter;
 
 	if (stack_len(*stack) < 2)
 		return ;
@@ -81,7 +81,7 @@ void		rotate_backward(t_swap **stack)
 	t_swap		*iter;
 
 	if (stack_len(*stack) < 2)
-		return;
+		return ;
 	tmp = *stack;
 	iter = *stack;
 	while (iter->next->next)

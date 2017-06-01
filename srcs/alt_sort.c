@@ -6,7 +6,7 @@
 /*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/25 10:43:01 by tpan              #+#    #+#             */
-/*   Updated: 2017/05/29 12:39:43 by tpan             ###   ########.fr       */
+/*   Updated: 2017/05/31 16:34:35 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int			*create_a_val_array(t_swap *stack, int **a_val_arr)
 	slen = stack_len(stack);
 	if (!(tmp_arr = (int *)malloc(sizeof(int) * slen)))
 		return (NULL);
-	ft_bzero(tmp_arr, sizeof(int) *slen);
+	ft_bzero(tmp_arr, sizeof(int) * slen);
 	i = 0;
 	while (stack)
 	{
@@ -50,9 +50,11 @@ void		three_sort(t_swap **sa, t_swap **sb, t_tracker *tracker)
 	{
 		sm = tmp_arr[ft_smallest_int(create_a_val_array(*sa, &tmp_arr), 3)];
 		free(tmp_arr);
-		if (((*sa)->value == sm) || (((*sa)->value > sm) && (*sa)->value < (*sa)->next->next->value))
+		if (((*sa)->value == sm) || (((*sa)->value > sm) &&
+									(*sa)->value < (*sa)->next->next->value))
 			execute_instructions(sa, sb, tracker, SA);
-		else if ((((*sa)->value) > (*sa)->next->value) && ((*sa)->value) > (*sa)->next->next->value)
+		else if ((((*sa)->value) > (*sa)->next->value) &&
+									((*sa)->value) > (*sa)->next->next->value)
 		{
 			execute_instructions(sa, sb, tracker, RA);
 			execute_instructions(sa, sb, tracker, SA);
@@ -97,4 +99,3 @@ void		bubblesque_sort(t_swap **sa, t_swap **sb, t_tracker *tracker)
 	while (*sb)
 		execute_instructions(sa, sb, tracker, PA);
 }
-
