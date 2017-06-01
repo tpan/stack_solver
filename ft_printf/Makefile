@@ -6,7 +6,7 @@
 #    By: tpan <marvin@42.fr>                        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/10/31 18:58:43 by tpan              #+#    #+#              #
-#    Updated: 2017/05/14 17:11:58 by tpan             ###   ########.fr        #
+#    Updated: 2017/05/31 20:00:24 by tpan             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,11 +52,13 @@ INCDIR = ./includes/
 
 all:$(LIBFT) $(NAME)
 
-$(NAME): $(LIBFT)
-	@echo "Compiling ft_printf"
+$(OBJ): $(SRC)
 	@$(CC) $(CFLAGS) -c -I$(INCDIR) $(SRC)
 	@mkdir -p $(OBJDIR)
 	@mv $(SRCS:.c=.o) $(OBJDIR)
+
+$(NAME): $(LIBFT) $(OBJ)
+	@echo "Compiling ft_printf"
 	@ar rc $(NAME) $(OBJ) $(LIBFT)
 	@echo "Made ft_printf"
 
