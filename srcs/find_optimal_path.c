@@ -6,7 +6,7 @@
 /*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/25 14:11:49 by tpan              #+#    #+#             */
-/*   Updated: 2017/05/27 13:12:34 by tpan             ###   ########.fr       */
+/*   Updated: 2017/05/31 19:21:26 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 static int	calc_shortest_route(t_swap *sa)
 {
 	int		attempt[4];
-	
+
 	ft_bzero(attempt, sizeof(int) * 4);
 	attempt[0] = MAX(sa->move_req_fw, sa->sb_req_fw) + 1;
 	attempt[1] = MAX(sa->move_req_bw, sa->sb_req_bw) + 1;

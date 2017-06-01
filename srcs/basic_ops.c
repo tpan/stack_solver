@@ -6,7 +6,7 @@
 /*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/02 18:46:25 by tpan              #+#    #+#             */
-/*   Updated: 2017/05/31 15:51:13 by tpan             ###   ########.fr       */
+/*   Updated: 2017/05/31 19:21:01 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void		push_on_top(t_swap **s2, t_swap **s1)
 	return ;
 }
 
-/* 
+/*
 ** Rotates the stack forward (top of the stack goes to the bottom; ie rotate)
 */
 

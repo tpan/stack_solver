@@ -6,7 +6,7 @@
 /*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/13 16:09:30 by tpan              #+#    #+#             */
-/*   Updated: 2017/05/13 16:10:59 by tpan             ###   ########.fr       */
+/*   Updated: 2017/05/31 19:36:00 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 size_t	ft_strlen(char const *str)
 {
-char *start;
-start = (char *)str;
-	
+	char *start;
+
+	start = (char *)str;
 	while (*str != '\0')
 	{
 		str++;

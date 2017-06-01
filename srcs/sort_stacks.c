@@ -6,7 +6,7 @@
 /*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/25 19:42:24 by tpan              #+#    #+#             */
-/*   Updated: 2017/05/27 14:51:00 by tpan             ###   ########.fr       */
+/*   Updated: 2017/05/31 19:19:11 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 ** Execute the instruction for the given operation code.
 */
 
-void		execute_instructions(t_swap **stack_a, t_swap **stack_b,
+void			execute_instructions(t_swap **stack_a, t_swap **stack_b,
 											t_tracker *tracker, t_op op)
 {
 	if (op == SA)
@@ -46,7 +46,6 @@ void		execute_instructions(t_swap **stack_a, t_swap **stack_b,
 /*
 ** Pushes all stack b elements onto stack a, after stack b is sorted in reverse
 ** order.
-**
 */
 
 static void		final_push(t_swap **sa, t_swap **sb, t_tracker *tracker)

@@ -6,7 +6,7 @@
 /*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/27 16:02:13 by tpan              #+#    #+#             */
-/*   Updated: 2017/05/27 16:02:36 by tpan             ###   ########.fr       */
+/*   Updated: 2017/05/31 19:18:09 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void		append_node(t_swap **stack, t_swap *to_add)
 	}
 }
 
-int		stack_len(t_swap *stack)
+int			stack_len(t_swap *stack)
 {
 	int		i;
 
@@ -42,7 +42,7 @@ int		stack_len(t_swap *stack)
 	if (stack)
 	{
 		i++;
-		while(stack->next)
+		while (stack->next)
 		{
 			stack = stack->next;
 			i++;

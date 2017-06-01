@@ -6,7 +6,7 @@
 /*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/22 17:26:13 by tpan              #+#    #+#             */
-/*   Updated: 2017/05/25 21:46:24 by tpan             ###   ########.fr       */
+/*   Updated: 2017/05/31 19:20:48 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static char		**split_args(char **argv, int index, int arg_len)
 {
-	char	**new_argv; 
+	char	**new_argv;
 	char	**tmp;
 	int		i;
 
@@ -43,7 +43,7 @@ char			**parse_args(char **argv)
 	while (argv && argv[i])
 	{
 		if (ft_strchr(argv[i], ' '))
-			return (split_args(argv, i , arg_len));
+			return (split_args(argv, i, arg_len));
 		i++;
 	}
 	return (NULL);

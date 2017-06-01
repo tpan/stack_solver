@@ -6,14 +6,14 @@
 /*   By: tpan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/17 09:10:26 by tpan              #+#    #+#             */
-/*   Updated: 2017/05/26 15:28:02 by tpan             ###   ########.fr       */
+/*   Updated: 2017/05/31 19:20:16 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
 /*
-** Parse args and ensure there is no mixing of ints and letters in an arg. 
+** Parse args and ensure there is no mixing of ints and letters in an arg.
 ** Ends the program and exits with an error message if found. The arg should
 ** never start with a char.
 */
@@ -65,7 +65,7 @@ static int			option_flag(char *arg, t_tracker *tracker)
 	return (0);
 }
 
-int			check_duplicates(t_swap *stack)
+int					check_duplicates(t_swap *stack)
 {
 	t_swap		*cmp_stack;
 
@@ -128,5 +128,5 @@ t_swap				*read_input_init_stack(char **argv, t_tracker *tracker)
 			element = create_list_element(argv);
 			append_node(&sa, element);
 		}
-		return (sa);
+	return (sa);
 }

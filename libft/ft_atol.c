@@ -6,7 +6,7 @@
 /*   By: tpan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/16 12:31:02 by tpan              #+#    #+#             */
-/*   Updated: 2017/05/27 17:59:42 by tpan             ###   ########.fr       */
+/*   Updated: 2017/05/31 19:31:32 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 long	ft_atol(char const *str)
 {
-	int				is_negative;
-	long				nbr;
+	int		is_negative;
+	long	nbr;
 
 	is_negative = 0;
 	nbr = 0;

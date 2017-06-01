@@ -6,7 +6,7 @@
 /*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/23 22:59:02 by tpan              #+#    #+#             */
-/*   Updated: 2017/05/25 12:26:16 by tpan             ###   ########.fr       */
+/*   Updated: 2017/05/31 19:21:50 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ t_op		*do_rr(t_swap *element, t_op *op)
 	int			rot_diff;
 
 	i = 0;
-	op = (t_op *)malloc(sizeof(t_op) * (element->moves_req +1));
+	op = (t_op *)malloc(sizeof(t_op) * (element->moves_req + 1));
 	rot_diff = MAX(element->move_req_fw, element->sb_req_fw) -
 				MIN(element->move_req_fw, element->sb_req_fw);
 	rot = MAX(element->move_req_fw, element->sb_req_fw) - rot_diff;
@@ -49,7 +49,7 @@ t_op		*do_rrr(t_swap *element, t_op *op)
 	int		rot_diff;
 
 	i = 0;
-	op = (t_op *)malloc(sizeof(t_op) * (element->moves_req +1));
+	op = (t_op *)malloc(sizeof(t_op) * (element->moves_req + 1));
 	rot_diff = MAX(element->move_req_bw, element->sb_req_bw) -
 				MIN(element->move_req_bw, element->sb_req_bw);
 	rot = MAX(element->move_req_bw, element->sb_req_bw) - rot_diff;

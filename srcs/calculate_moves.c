@@ -6,7 +6,7 @@
 /*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/23 21:33:28 by tpan              #+#    #+#             */
-/*   Updated: 2017/05/25 21:06:29 by tpan             ###   ########.fr       */
+/*   Updated: 2017/05/31 19:15:50 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,7 @@ void		calculate_moves(t_swap *sa, t_swap *sb, t_tracker *tracker)
 	while (sa)
 	{
 		sa->move_req_fw = a_cur_depth;
-		sa->move_req_bw = 
+		sa->move_req_bw =
 				tracker->a_height == 1 ? 0 : tracker->a_height - a_cur_depth;
 		b_target_depth = find_sb_target_depth(sa->value, sb, b_vals_in_order,
 															tracker->b_height);

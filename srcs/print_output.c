@@ -6,15 +6,15 @@
 /*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/27 16:01:42 by tpan              #+#    #+#             */
-/*   Updated: 2017/05/27 16:01:43 by tpan             ###   ########.fr       */
+/*   Updated: 2017/05/31 19:18:37 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
 /*
- ** Prints the operation currently being performed.
- */
+** Prints the operation currently being performed.
+*/
 
 void		print_op_code(int code)
 {

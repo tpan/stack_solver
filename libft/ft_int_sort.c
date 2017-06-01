@@ -6,7 +6,7 @@
 /*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/25 11:44:15 by tpan              #+#    #+#             */
-/*   Updated: 2017/05/25 12:05:59 by tpan             ###   ########.fr       */
+/*   Updated: 2017/05/31 19:35:09 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static int		get_smallest_unused_int(int *arr, int *used, int len)
 
 	i = 0;
 	set = 0;
-	while(i <len)
+	while (i < len)
 	{
 		if ((arr[i] < smallest || !set) && !used[i])
 		{
@@ -59,7 +59,7 @@ int				*ft_int_sort(int *arr, int len)
 
 	sorted = (int *)malloc(sizeof(int) * len);
 	used = (int *)malloc(sizeof(int) * len);
-	ft_bzero(sorted, sizeof(int) *len);
+	ft_bzero(sorted, sizeof(int) * len);
 	ft_bzero(used, sizeof(int) * len);
 	i = 0;
 	while (!all_used(used, len))

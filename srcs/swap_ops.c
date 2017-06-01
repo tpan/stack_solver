@@ -6,11 +6,11 @@
 /*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/05 20:59:49 by tpan              #+#    #+#             */
-/*   Updated: 2017/05/25 18:22:08 by tpan             ###   ########.fr       */
+/*   Updated: 2017/05/31 19:19:21 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"../includes/push_swap.h"
+#include "../includes/push_swap.h"
 
 void		sa(t_swap **stacka, t_swap **stackb, t_tracker *tracker)
 {

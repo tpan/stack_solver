@@ -6,7 +6,7 @@
 /*   By: tpan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/27 16:20:06 by tpan              #+#    #+#             */
-/*   Updated: 2017/05/28 13:38:01 by tpan             ###   ########.fr       */
+/*   Updated: 2017/05/31 19:15:08 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,36 +16,36 @@
 # include "libft.h"
 # include "ft_printf.h"
 
-#define RED		"\x1b[31m"
-#define GREEN	"\x1b[32m"
-#define BOLD	"\x1b[1m"
-#define UL		"\x1b[4m"
-#define RESET	"\x1b[0m"
-#define ECOLE42	"        :::      ::::::::\n       :+:      :+:    :+:\n" p2
-#define p2		"    +:+ +:+         +:+  \n  +#+  +:+       +#+     \n" p3
-#define p3		"+#+#+#+#+#+   +#+        \n     #+#    #+#          \n" p4
-#define p4		"    ###   ########.us.org    \n"
+# define RED		"\x1b[31m"
+# define GREEN		"\x1b[32m"
+# define BOLD		"\x1b[1m"
+# define UL			"\x1b[4m"
+# define RESET		"\x1b[0m"
+# define ECOLE42	"        :::      ::::::::\n       :+:      :+:    :+:\n" P2
+# define P2			"    +:+ +:+         +:+  \n  +#+  +:+       +#+     \n" P3
+# define P3			"+#+#+#+#+#+   +#+        \n     #+#    #+#          \n" P4
+# define P4			"    ###   ########.us.org    \n"
 
 typedef enum	e_op
-{	
+{
 	NOTVALID = 0, SA, SB, SS, PA, PB, RA, RB, RR, RRA, RRB, RRR
 }				t_op;
 
 typedef struct	s_swap
 {
-	int			value;
-	int			move_req_fw;
-	int			move_req_bw;
-	int			sb_req_fw;
-	int			sb_req_bw;
-	int			moves_req;
-	int			optimal_path;
-	struct s_swap		*next;
+	int				value;
+	int				move_req_fw;
+	int				move_req_bw;
+	int				sb_req_fw;
+	int				sb_req_bw;
+	int				moves_req;
+	int				optimal_path;
+	struct s_swap	*next;
 }				t_swap;
 
 typedef struct	s_tracker
 {
-	t_op		current_operation;
+	t_op			current_operation;
 	int				a_height;
 	int				b_height;
 	int				debug;

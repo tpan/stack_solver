@@ -6,7 +6,7 @@
 /*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/22 18:06:17 by tpan              #+#    #+#             */
-/*   Updated: 2017/05/22 19:10:50 by tpan             ###   ########.fr       */
+/*   Updated: 2017/05/31 19:33:31 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static int	ft_is_delim(char c, char *delim)
 ** Count the number of tokens by parsing the string.
 */
 
-static int ft_tokencount(char *str, char *delim)
+static int	ft_tokencount(char *str, char *delim)
 {
 	int		i;
 	int		flag;
@@ -65,16 +65,16 @@ static int	ft_tokenlen(char *str, char *delim)
 	return (i);
 }
 
-char	**ft_strtok(char *str, char *delim)
+char		**ft_strtok(char *str, char *delim)
 {
 	int		i;
 	int		k;
 	int		tok_len;
 	char	**tok;
 
-	if (!str || !(tok = 
+	if (!str || !(tok =
 			(char **)malloc(sizeof(char *) * (ft_tokencount(str, delim) + 1))))
-			return(NULL);
+		return (NULL);
 	i = 0;
 	k = 0;
 	while (k < ft_tokencount(str, delim))
