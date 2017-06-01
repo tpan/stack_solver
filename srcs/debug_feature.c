@@ -6,7 +6,7 @@
 /*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/23 16:16:50 by tpan              #+#    #+#             */
-/*   Updated: 2017/05/31 16:41:21 by tpan             ###   ########.fr       */
+/*   Updated: 2017/06/01 08:38:57 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,9 +74,9 @@ void			print_stacks(t_swap *sa, t_swap *sb, t_tracker *tracker)
 	char	*op;
 
 	op = opcode_to_str(tracker->current_operation);
-	ft_printf(BOLD, GREEN, ECOLE42, RESET);
-	ft_printf(UL, "Stack A             Stack B\n" RESET);
-	ft_printf(BOLD, UL "----------  %3s  -----------\n" RESET, op);
+	ft_printf(ECOLE42);
+	ft_printf(UL "Stack A             Stack B\n" RESET);
+	ft_printf(BOLD "----------  %3s  -----------\n" RESET, op);
 	while (sa || sb)
 	{
 		if (sa && sb)
