@@ -39,3 +39,9 @@ I also included a verbose '-v' flag which serves as a visualizer for the stacks.
     ./push_Swap 42 10 20 6 3 -v
 
 * Of course, it must conform to the [42 Norm style guide](https://github.com/tpan/stack_solver/blob/master/push_swap.en.pdf)
+
+Authorized functions
+* write
+* malloc
+* free
+* exit
